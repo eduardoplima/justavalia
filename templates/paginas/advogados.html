@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Para advogados e escritórios — Justavalia{% endblock %}
+
+{% block content %}
+<section class="relative overflow-hidden bg-tinta">
+  <img
+    src="{% static 'img/logo-simbolo-monograma-claro.svg' %}"
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none absolute -right-28 -bottom-40 h-[440px] w-[440px]"
+  >
+  <div class="jv-container relative flex flex-col gap-5 py-16 md:py-[76px]">
+    <span class="font-mono text-xs tracking-[2.4px] uppercase text-cobre-claro">Para advogados, cartórios e contadores</span>
+    <h1 class="m-0 font-titulo font-medium text-[clamp(32px,4.4vw,50px)] leading-[1.14] text-papel max-w-[26ch]">A avaliação não precisa ser o gargalo do inventário.</h1>
+    <p class="m-0 font-texto text-lg leading-[1.6] text-texto-escuro-suave max-w-[62ch]">Laudos de engenharia custam caro e demoram — e muitos casos não os exigem. Indique a Justavalia e receba um parecer técnico assinado, com prazo previsível, que destrava o processo do seu cliente.</p>
+    <div class="flex flex-wrap gap-3.5">
+      <a href="https://wa.me/55[NUMERO]" class="jv-btn">Fale com a gente</a>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container pt-16 md:pt-[72px] pb-2">
+  <span class="jv-eyebrow">Por que indicar</span>
+  <h2 class="jv-h2 mt-3 mb-9 max-w-[26ch]">Um documento que o seu processo pode esperar de pé.</h2>
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" class="text-tinta" aria-hidden="true"><use href="{% static 'img/icones.svg' %}#jv-icon-prazo"></use></svg>
+      <h3 class="m-0 font-titulo font-semibold text-[20px] text-tinta">Prazo previsível</h3>
+      <p class="m-0 font-texto text-[15.5px] leading-[1.55] text-texto">Até 5 dias úteis a partir do material completo. Você consegue prometer uma data ao cliente.</p>
+    </div>
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" class="text-tinta" aria-hidden="true"><use href="{% static 'img/icones.svg' %}#jv-icon-assinatura"></use></svg>
+      <h3 class="m-0 font-titulo font-semibold text-[20px] text-tinta">Responsabilidade profissional</h3>
+      <p class="m-0 font-texto text-[15.5px] leading-[1.55] text-texto">Cada PTAM sai assinado por avaliador identificado, com CRECI e CNAI, via certificado ICP-Brasil.</p>
+    </div>
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" class="text-tinta" aria-hidden="true"><use href="{% static 'img/icones.svg' %}#jv-icon-verificacao"></use></svg>
+      <h3 class="m-0 font-titulo font-semibold text-[20px] text-tinta">Verificável</h3>
+      <p class="m-0 font-texto text-[15.5px] leading-[1.55] text-texto">Assinatura conferível no validador oficial do ITI. O cartório valida na hora.</p>
+    </div>
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="text-tinta" aria-hidden="true">
+        <line x1="12" y1="4" x2="12" y2="20"></line>
+        <path d="M16 7 H10 a3 3 0 0 0 0 6 h4 a3 3 0 0 1 0 6 H8"></path>
+      </svg>
+      <h3 class="m-0 font-titulo font-semibold text-[20px] text-tinta">Custo proporcional</h3>
+      <p class="m-0 font-texto text-[15.5px] leading-[1.55] text-texto">R$ 299 fixos para residencial urbano — sem orçamento, sem visita, sem surpresa no meio do inventário.</p>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container pt-16 pb-2">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-4">
+    <div class="bg-papel-card border-[1.5px] border-tinta rounded-doc p-6 flex flex-col gap-2.5">
+      <span class="font-mono text-xs tracking-[2.4px] uppercase text-tinta">O que podemos afirmar</span>
+      <p class="m-0 font-texto text-base leading-[1.6] text-tinta">O PTAM é reconhecido pela Receita Federal como documento hábil para fundamentar valor de imóvel (IN RFB 2.091/2022) e é amplamente usado em inventários extrajudiciais, divórcios e planejamento patrimonial.</p>
+    </div>
+    <div class="bg-papel-card border-[1.5px] border-cobre rounded-doc p-6 flex flex-col gap-2.5">
+      <span class="font-mono text-xs tracking-[2.4px] uppercase text-cobre">O que não prometemos</span>
+      <p class="m-0 font-texto text-base leading-[1.6] text-tinta">Aceitação universal pelas SEFAZ estaduais para ITCMD — as regras variam por estado. Verifique a exigência local antes de protocolar; se o caso pedir outro documento, dizemos isso por escrito.</p>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container-texto pt-16 pb-20 md:pb-[88px]">
+  <span class="jv-eyebrow">Parceria</span>
+  <h2 class="jv-h2 mt-3 mb-4 text-[clamp(26px,3.2vw,36px)]">Como funciona a indicação</h2>
+  <p class="m-0 mb-6 font-texto text-[16.5px] leading-[1.6] text-texto max-w-[60ch]">Você indica, nós conduzimos o cliente do primeiro contato à entrega — e mantemos você informado do andamento. [modelo de indicação — placeholder para condições].</p>
+  <div class="flex flex-col gap-2.5 mb-9">
+    <div class="jv-card flex gap-3.5 items-baseline">
+      <span class="font-mono text-[13px] tracking-[2px] text-cobre">01</span>
+      <span class="font-texto text-base text-tinta">Você apresenta a Justavalia ao cliente — enviamos material de apoio pronto para encaminhar.</span>
+    </div>
+    <div class="jv-card flex gap-3.5 items-baseline">
+      <span class="font-mono text-[13px] tracking-[2px] text-cobre">02</span>
+      <span class="font-texto text-base text-tinta">O cliente pede a avaliação pelo WhatsApp e envia o material com nosso roteiro guiado.</span>
+    </div>
+    <div class="jv-card flex gap-3.5 items-baseline">
+      <span class="font-mono text-[13px] tracking-[2px] text-cobre">03</span>
+      <span class="font-texto text-base text-tinta">Em até 5 dias úteis, o PTAM assinado chega — e o seu processo anda.</span>
+    </div>
+  </div>
+  <div class="flex flex-wrap items-center gap-3.5">
+    <a href="https://wa.me/55[NUMERO]" class="jv-btn">Fale com a gente</a>
+    <span class="font-texto text-sm text-texto-suave">Pedimos o material de apoio no mesmo contato.</span>
+  </div>
+</section>
+{% endblock %}

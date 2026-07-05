@@ -1,0 +1,154 @@
+/* ============================================================
+   Justavalia — Design Tokens
+   Base documental sóbria: escuro verde-tinta sobre papel off-white,
+   com um único acento quente (cobre) para CTAs e para o selo.
+   ============================================================ */
+
+:root {
+  /* ---- Cores ---- */
+  --jv-tinta:        #16302B; /* base escura, títulos, footer, seções escuras */
+  --jv-tinta-900:    #0E211D; /* fundos mais profundos / hover de superfícies escuras */
+  --jv-tinta-700:    #22423A; /* selo marca-d'água sobre fundo escuro */
+  --jv-tinta-border: #2A473F; /* divisores sobre fundo escuro */
+
+  --jv-papel:        #F6F3EC; /* fundo padrão da página */
+  --jv-papel-card:   #FDFCF8; /* cards, superfície do documento */
+  --jv-papel-border: #E4DECF; /* borda de cards sobre papel */
+  --jv-linha:        #DDD6C8; /* borda de header / divisores sobre papel */
+
+  --jv-cobre:        #B4611F; /* ACENTO ÚNICO: CTA, selo, destaques, números de passo */
+  --jv-cobre-hover:  #94500F; /* hover do CTA */
+  --jv-cobre-claro:  #C98A4B; /* acento sobre fundo escuro (footer, hero tinta) */
+
+  --jv-texto:        #3C4742; /* texto corrido sobre papel */
+  --jv-texto-suave:  #5B655F; /* legendas, texto secundário */
+  --jv-texto-escuro-suave: #C4CDC6; /* texto sobre fundo tinta */
+  --jv-texto-escuro-legenda: #8FA098; /* legendas sobre fundo tinta */
+
+  /* ---- Tipografia ---- */
+  --jv-fonte-titulo: 'Newsreader', Georgia, 'Times New Roman', serif;      /* serifada editorial — autoridade documental */
+  --jv-fonte-texto:  'Source Sans 3', system-ui, -apple-system, sans-serif; /* sans humanista — corpo e interface */
+  --jv-fonte-mono:   'Spline Sans Mono', ui-monospace, 'SFMono-Regular', monospace; /* dados, registros, carimbos */
+
+  /* Escala de tamanho (as páginas usam clamp() responsivo nos títulos) */
+  --jv-fs-eyebrow:   12px;   /* eyebrow em mono, letter-spacing 2.4px */
+  --jv-fs-body:      16px;
+  --jv-fs-body-lg:   18px;
+  --jv-fs-h3:        20px;
+  --jv-fs-h1-min:    32px;   /* clamp(32px, 4.4vw, 48–54px) */
+
+  /* ---- Espaçamento ---- */
+  --jv-sp-1:  8px;
+  --jv-sp-2:  12px;
+  --jv-sp-3:  16px;
+  --jv-sp-4:  20px;
+  --jv-sp-5:  24px;
+  --jv-sp-6:  32px;
+  --jv-sp-7:  48px;
+  --jv-sp-section: 72px; /* padding vertical entre seções */
+
+  /* ---- Layout ---- */
+  --jv-container:      1140px; /* largura máxima de conteúdo largo */
+  --jv-container-texto: 820px; /* largura máxima de páginas de leitura (FAQ, Como funciona) */
+
+  /* ---- Raio, bordas, sombras ---- */
+  --jv-radius:      4px;    /* botões e superfícies — cantos discretos, quase documentais */
+  --jv-radius-pill: 999px;  /* botão flutuante de WhatsApp */
+  --jv-shadow-doc:  0 18px 44px rgba(22, 48, 43, 0.16); /* mockup do documento sobre papel */
+  --jv-shadow-doc-escuro: 0 22px 54px rgba(0, 0, 0, 0.35); /* documento sobre fundo tinta */
+  --jv-shadow-card: 0 14px 36px rgba(22, 48, 43, 0.12);
+  --jv-shadow-fab:  0 6px 18px rgba(22, 48, 43, 0.28); /* botão flutuante */
+
+  /* ---- Foco (acessibilidade) ---- */
+  --jv-focus:        2px solid var(--jv-cobre);
+  --jv-focus-escuro: 2px solid var(--jv-papel); /* foco sobre fundo tinta/cobre */
+}
+
+/* ============================================================
+   Import das fontes (Google Fonts)
+   ============================================================ */
+/* @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Source+Sans+3:wght@400..700&family=Spline+Sans+Mono:wght@400..600&display=swap'); */
+
+/* ============================================================
+   Utilitários base
+   ============================================================ */
+.jv-eyebrow {
+  font-family: var(--jv-fonte-mono);
+  font-size: var(--jv-fs-eyebrow);
+  letter-spacing: 2.4px;
+  color: var(--jv-cobre);
+  text-transform: uppercase;
+}
+
+.jv-h1 {
+  font-family: var(--jv-fonte-titulo);
+  font-weight: 500;
+  font-size: clamp(32px, 4.4vw, 48px);
+  line-height: 1.14;
+  color: var(--jv-tinta);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.jv-h2 {
+  font-family: var(--jv-fonte-titulo);
+  font-weight: 500;
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.15;
+  color: var(--jv-tinta);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.jv-body {
+  font-family: var(--jv-fonte-texto);
+  font-size: var(--jv-fs-body-lg);
+  line-height: 1.6;
+  color: var(--jv-texto);
+}
+
+/* Botão CTA primário — sempre cobre, sempre leva ao WhatsApp */
+.jv-btn {
+  display: inline-block;
+  font-family: var(--jv-fonte-texto);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--jv-papel);
+  background: var(--jv-cobre);
+  text-decoration: none;
+  padding: 15px 26px;
+  border-radius: var(--jv-radius);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.jv-btn:hover  { background: var(--jv-cobre-hover); }
+.jv-btn:focus-visible { outline: var(--jv-focus-escuro); outline-offset: 2px; }
+
+/* Botão secundário — contorno sobre papel */
+.jv-btn-ghost {
+  display: inline-block;
+  font-family: var(--jv-fonte-texto);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--jv-tinta);
+  text-decoration: none;
+  padding: 15px 20px;
+  border: 1.5px solid var(--jv-tinta);
+  border-radius: var(--jv-radius);
+  background: transparent;
+  cursor: pointer;
+}
+.jv-btn-ghost:hover { background: #ECE7DA; }
+.jv-btn-ghost:focus-visible { outline: var(--jv-focus); outline-offset: 2px; }
+
+/* Card sobre papel */
+.jv-card {
+  background: var(--jv-papel-card);
+  border: 1px solid var(--jv-papel-border);
+  padding: var(--jv-sp-5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

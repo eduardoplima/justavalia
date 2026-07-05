@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv python install 3.12
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: justavalia
+          POSTGRES_USER: justavalia
+          POSTGRES_PASSWORD: justavalia
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U justavalia"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DJANGO_SETTINGS_MODULE: justavalia.core.settings.test
+      DJANGO_SECRET_KEY: ci-throwaway-secret
+      DATABASE_URL: postgres://justavalia:justavalia@localhost:5432/justavalia
+      CELERY_BROKER_URL: redis://localhost:6379/0
+      CELERY_RESULT_BACKEND: redis://localhost:6379/1
+      AWS_STORAGE_BUCKET_NAME: justavalia-media
+      AWS_S3_ENDPOINT_URL: http://localhost:9000
+      AWS_ACCESS_KEY_ID: ci
+      AWS_SECRET_ACCESS_KEY: ci
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv python install 3.12
+      - run: uv sync --frozen
+      - name: Checa migrações pendentes
+        run: uv run python manage.py makemigrations --check --dry-run
+      - name: Testes
+        run: uv run pytest

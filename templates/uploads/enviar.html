@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Enviar mídia — {{ pedido.numero }} — Justavalia{% endblock %}
+
+{% block extra_head %}
+<link href="https://releases.transloadit.com/uppy/v5.2.1/uppy.min.css" rel="stylesheet">
+<style>
+  /* Ajustes mínimos do Dashboard ao tema (o Uppy traz seu próprio CSS). */
+  .uppy-Dashboard-inner { border-radius: var(--radius-doc); }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="jv-container-texto py-section">
+  <p class="jv-eyebrow">PEDIDO {{ pedido.numero }} · ENVIO GUIADO</p>
+  <h1 class="jv-h1 mt-3">Envie as fotos, o vídeo e os documentos</h1>
+  <p class="jv-body mt-4 max-w-[62ch]">
+    Siga o roteiro abaixo. Os envios são retomáveis: se a conexão cair, o upload continua
+    de onde parou. Itens marcados como <strong>obrigatórios</strong> precisam estar completos
+    para concluir.
+  </p>
+
+  <div id="protocolo" class="mt-10 flex flex-col gap-10">
+    {% for cat in categorias %}
+    <div>
+      <h2 class="font-titulo text-tinta text-[20px] font-medium">
+        {{ cat.label }}
+        {% if cat.obrigatoria %}
+          <span class="jv-eyebrow align-middle ml-2">OBRIGATÓRIO</span>
+        {% else %}
+          <span class="font-mono text-[11px] tracking-[1.5px] text-texto-suave align-middle ml-2">OPCIONAL</span>
+        {% endif %}
+      </h2>
+      <div class="mt-3 jv-uploader" data-categoria="{{ cat.valor }}"></div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <form method="post" action="{% url 'uploads:concluir' numero=pedido.numero %}" class="mt-10">
+    {% csrf_token %}
+    <button type="submit" class="jv-btn">Concluir envio</button>
+    <p class="mt-3 font-mono text-[11.5px] tracking-[1px] text-texto-suave">
+      AO CONCLUIR, VALIDAMOS O CHECKLIST E INICIAMOS O PROCESSAMENTO
+    </p>
+  </form>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="module">
+  import { Uppy, Dashboard, AwsS3, GoldenRetriever } from 'https://releases.transloadit.com/uppy/v5.2.1/uppy.min.mjs';
+
+  const numero = "{{ pedido.numero }}";
+  const base = `/pedido/${numero}/upload/s3/multipart`;
+
+  function csrftoken() {
+    const m = document.cookie.match(/csrftoken=([^;]+)/);
+    return m ? m[1] : "";
+  }
+  const jsonHeaders = () => ({ "Content-Type": "application/json", "X-CSRFToken": csrftoken() });
+
+  document.querySelectorAll(".jv-uploader").forEach((el) => {
+    const categoria = el.dataset.categoria;
+
+    const uppy = new Uppy({ autoProceed: false })
+      .use(Dashboard, { inline: true, target: el, height: 260, proudlyDisplayPoweredByUppy: false, note: "Fotos, vídeo ou PDF." })
+      .use(GoldenRetriever)  // retoma após recarregar a aba
+      .use(AwsS3, {
+        shouldUseMultipart: true,  // sempre multipart → retomável via listParts
+        async createMultipartUpload(file) {
+          const r = await fetch(`${base}/`, {
+            method: "POST", headers: jsonHeaders(),
+            body: JSON.stringify({ filename: file.name, type: file.type, categoria }),
+          });
+          if (!r.ok) throw new Error("createMultipartUpload falhou");
+          return r.json();  // { uploadId, key }
+        },
+        async signPart(file, { uploadId, key, partNumber }) {
+          const q = new URLSearchParams({ key });
+          const r = await fetch(`${base}/${uploadId}/${partNumber}/?${q}`);
+          if (!r.ok) throw new Error("signPart falhou");
+          return r.json();  // { url }
+        },
+        async listParts(file, { uploadId, key }) {
+          const q = new URLSearchParams({ key });
+          const r = await fetch(`${base}/${uploadId}/?${q}`);
+          if (!r.ok) throw new Error("listParts falhou");
+          return r.json();  // [{ PartNumber, Size, ETag }]
+        },
+        async completeMultipartUpload(file, { uploadId, key, parts }) {
+          const q = new URLSearchParams({ key });
+          const r = await fetch(`${base}/${uploadId}/complete/?${q}`, {
+            method: "POST", headers: jsonHeaders(), body: JSON.stringify({ parts }),
+          });
+          if (!r.ok) throw new Error("completeMultipartUpload falhou");
+          return r.json();  // { location }
+        },
+        async abortMultipartUpload(file, { uploadId, key }) {
+          const q = new URLSearchParams({ key });
+          await fetch(`${base}/${uploadId}/?${q}`, { method: "DELETE", headers: { "X-CSRFToken": csrftoken() } });
+        },
+      });
+  });
+</script>
+{% endblock %}

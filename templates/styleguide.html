@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Styleguide — Justavalia{% endblock %}
+
+{% block content %}
+<section class="jv-container py-section">
+  <p class="jv-eyebrow">Página interna (dev)</p>
+  <h1 class="jv-h1 mt-2">Styleguide — Justavalia</h1>
+  <p class="jv-body mt-3 max-w-texto">
+    Conferência visual de todos os tokens e componentes da identidade (fonte de verdade:
+    <code class="font-mono text-sm">design/tokens.md</code>). Só é servida quando
+    <code class="font-mono text-sm">SHOW_STYLEGUIDE</code> está ativo.
+  </p>
+</section>
+
+<section class="jv-container py-10 border-t border-linha">
+  <h2 class="jv-h2">Paleta</h2>
+  <p class="jv-body mt-2 mb-6">15 cores. Base documental verde-tinta sobre papel off-white, com um único acento quente: cobre.</p>
+
+  <div class="grid gap-6" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-tinta"></div>
+      <p class="m-0 text-sm font-texto text-texto">tinta</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#16302B</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-tinta-900"></div>
+      <p class="m-0 text-sm font-texto text-texto">tinta-900</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#0E211D</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-tinta-700"></div>
+      <p class="m-0 text-sm font-texto text-texto">tinta-700</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#22423A</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-tinta-border"></div>
+      <p class="m-0 text-sm font-texto text-texto">tinta-border</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#2A473F</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-papel"></div>
+      <p class="m-0 text-sm font-texto text-texto">papel</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#F6F3EC</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-papel-card"></div>
+      <p class="m-0 text-sm font-texto text-texto">papel-card</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#FDFCF8</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-papel-border"></div>
+      <p class="m-0 text-sm font-texto text-texto">papel-border</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#E4DECF</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-linha"></div>
+      <p class="m-0 text-sm font-texto text-texto">linha</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#DDD6C8</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-cobre"></div>
+      <p class="m-0 text-sm font-texto text-texto">cobre</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#B4611F</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-cobre-hover"></div>
+      <p class="m-0 text-sm font-texto text-texto">cobre-hover</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#94500F</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-cobre-claro"></div>
+      <p class="m-0 text-sm font-texto text-texto">cobre-claro</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#C98A4B</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-texto"></div>
+      <p class="m-0 text-sm font-texto text-texto">texto</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#3C4742</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-texto-suave"></div>
+      <p class="m-0 text-sm font-texto text-texto">texto-suave</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#5B655F</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-texto-escuro-suave"></div>
+      <p class="m-0 text-sm font-texto text-texto">texto-escuro-suave</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#C4CDC6</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="h-16 rounded-doc border border-linha bg-texto-escuro-legenda"></div>
+      <p class="m-0 text-sm font-texto text-texto">texto-escuro-legenda</p>
+      <p class="m-0 font-mono text-xs text-texto-suave">#8FA098</p>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container py-10 border-t border-linha">
+  <h2 class="jv-h2">Tipografia</h2>
+  <p class="jv-body mt-2 mb-6">
+    Três famílias: <strong>Newsreader</strong> (títulos, serifada editorial),
+    <strong>Source Sans 3</strong> (corpo e interface) e <strong>Spline Sans Mono</strong>
+    (dados, registros, carimbos).
+  </p>
+
+  <div class="flex flex-col gap-5">
+    <p class="jv-eyebrow m-0">Eyebrow · mono, uppercase, tracking 2.4px</p>
+    <h1 class="jv-h1 m-0">Título h1 — Newsreader</h1>
+    <h2 class="jv-h2 m-0">Título h2 — Newsreader</h2>
+    <h3 class="font-titulo text-tinta text-[20px] font-medium m-0">Título h3 — Newsreader 20px</h3>
+    <p class="jv-body m-0">Corpo — Source Sans 3, 16–18.5px, line-height 1.55–1.65. Usado em parágrafos e interface.</p>
+    <p class="font-mono text-sm tracking-[1.6px] uppercase text-texto m-0">Dados / registros / carimbos — Spline Sans Mono</p>
+  </div>
+</section>
+
+<section class="jv-container py-10 border-t border-linha">
+  <h2 class="jv-h2">Espaçamento</h2>
+  <p class="jv-body mt-2 mb-6">Escala de espaçamento (sp-1…sp-7) e o padding vertical entre seções (section).</p>
+
+  <div class="flex flex-wrap items-end gap-6">
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-4 w-2 bg-cobre"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">sp-1 · 8px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-4 w-3 bg-cobre"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">sp-2 · 12px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-4 w-4 bg-cobre"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">sp-3 · 16px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-4 w-5 bg-cobre"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">sp-4 · 20px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-4 w-6 bg-cobre"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">sp-5 · 24px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-4 w-8 bg-cobre"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">sp-6 · 32px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-4 w-12 bg-cobre"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">sp-7 · 48px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-4 w-18 bg-tinta"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">section · 72px</p>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container py-10 border-t border-linha">
+  <h2 class="jv-h2">Raio &amp; sombras</h2>
+
+  <div class="flex flex-wrap items-end gap-8 mt-6">
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-16 w-24 bg-papel-card border border-papel-border rounded-doc"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">radius-doc · 4px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-10 w-24 bg-cobre rounded-pill"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">radius-pill · 999px</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-16 w-24 bg-papel-card rounded-doc shadow-doc"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">shadow-doc</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-16 w-24 bg-papel-card rounded-doc shadow-card"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">shadow-card</p>
+    </div>
+    <div class="flex flex-col items-start gap-2">
+      <div class="h-12 w-24 bg-cobre rounded-pill shadow-fab"></div>
+      <p class="m-0 font-mono text-xs text-texto-suave">shadow-fab</p>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container py-10 border-t border-linha">
+  <h2 class="jv-h2">Componentes</h2>
+
+  <div class="flex flex-col gap-10 mt-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button type="button" class="jv-btn">Pedir minha avaliação</button>
+      <button type="button" class="jv-btn-ghost">Como funciona</button>
+    </div>
+
+    <div class="jv-card rounded-doc max-w-sm">
+      <p class="jv-eyebrow m-0">Eyebrow do card</p>
+      <h3 class="font-titulo text-tinta text-[20px] font-medium mt-2 mb-1">Card (.jv-card)</h3>
+      <p class="jv-body m-0">Superfície papel-card com borda papel-border, usada em blocos de conteúdo sobre o fundo papel.</p>
+    </div>
+
+    <div class="border-t-2 border-tinta pt-4 max-w-xs">
+      <span class="font-mono text-cobre text-sm tracking-[2.4px]">01</span>
+      <h3 class="font-titulo text-tinta text-[20px] font-medium mt-2 mb-1">Card de etapa</h3>
+      <p class="jv-body m-0">Borda superior 2px tinta + número de passo em mono cobre — usado em "Como funciona".</p>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-8">
+      <div class="flex flex-col items-start gap-2">
+        <div class="bg-tinta rounded-doc p-6 flex items-center justify-center">
+          <img src="{% static 'img/logo-simbolo-monograma-claro.svg' %}" alt="Símbolo Justavalia (versão clara)" class="h-16 w-16">
+        </div>
+        <p class="m-0 font-mono text-xs text-texto-suave">logo claro · sobre tinta</p>
+      </div>
+      <div class="flex flex-col items-start gap-2">
+        <div class="bg-papel-card border border-papel-border rounded-doc p-6 flex items-center justify-center">
+          <img src="{% static 'img/logo-simbolo-monograma.svg' %}" alt="Símbolo Justavalia (versão escura)" class="h-16 w-16">
+        </div>
+        <p class="m-0 font-mono text-xs text-texto-suave">logo escuro · sobre papel</p>
+      </div>
+      <div class="flex flex-col items-start gap-2">
+        <div class="bg-papel-card border border-papel-border rounded-doc p-6 flex items-center justify-center">
+          <img src="{% static 'img/rubrica.svg' %}" alt="Rubrica — elemento-assinatura da marca" class="h-16 w-auto">
+        </div>
+        <p class="m-0 font-mono text-xs text-texto-suave">rubrica</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container py-10 border-t border-linha">
+  <h2 class="jv-h2">Foco (acessibilidade)</h2>
+  <p class="jv-body mt-2 mb-6">Navegue com Tab: o contorno de foco é sempre visível (cobre sobre papel). Nunca removemos outlines.</p>
+
+  <form class="flex flex-wrap items-end gap-3" onsubmit="return false;">
+    <div class="flex flex-col gap-1">
+      <label for="campo-demo" class="font-texto text-sm text-texto-suave">Campo de demonstração</label>
+      <input
+        id="campo-demo"
+        type="text"
+        placeholder="Digite algo…"
+        class="border border-papel-border rounded-doc bg-papel-card text-texto px-3 py-2 focus-visible:outline-2 focus-visible:outline-cobre"
+      >
+    </div>
+    <button type="submit" class="jv-btn">Confirmar</button>
+  </form>
+</section>
+{% endblock %}

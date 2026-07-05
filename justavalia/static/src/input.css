@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+/* Onde o Tailwind procura classes usadas (templates Django). */
+@source "../../../templates/**/*.html";
+@source "../../../justavalia/**/templates/**/*.html";
+
+/* ============================================================
+   Fontes auto-hospedadas (latin + latin-ext) — evita round-trip a
+   fonts.googleapis.com/gstatic.com (melhora FCP e CLS). woff2 em ../fonts/.
+   ============================================================ */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/newsreader-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/newsreader-latinext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/sourcesans3-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/sourcesans3-latinext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Spline Sans Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../fonts/splinemono-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Spline Sans Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../fonts/splinemono-latinext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ============================================================
+   Tema Justavalia — tokens da identidade visual (design/tokens.md).
+   Base documental: verde-tinta sobre papel off-white; acento único cobre.
+   ============================================================ */
+@theme {
+  /* Cores */
+  --color-tinta: #16302b;
+  --color-tinta-900: #0e211d;
+  --color-tinta-700: #22423a;
+  --color-tinta-border: #2a473f;
+  --color-papel: #f6f3ec;
+  --color-papel-card: #fdfcf8;
+  --color-papel-border: #e4decf;
+  --color-papel-hover: #ece7da;
+  --color-linha: #ddd6c8;
+  --color-cobre: #b4611f;
+  --color-cobre-hover: #94500f;
+  --color-cobre-claro: #c98a4b;
+  --color-texto: #3c4742;
+  --color-texto-suave: #5b655f;
+  --color-texto-escuro-suave: #c4cdc6;
+  --color-texto-escuro-legenda: #8fa098;
+
+  /* Tipografia */
+  --font-titulo: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-texto: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  --font-mono: "Spline Sans Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Espaçamento da identidade (além da escala padrão do Tailwind) */
+  --spacing-section: 72px;
+
+  /* Larguras de contêiner */
+  --container-largo: 1140px;
+  --container-texto: 820px;
+
+  /* Raio */
+  --radius-doc: 4px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-doc: 0 18px 44px rgba(22, 48, 43, 0.16);
+  --shadow-card: 0 14px 36px rgba(22, 48, 43, 0.12);
+  --shadow-fab: 0 6px 18px rgba(22, 48, 43, 0.28);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  body {
+    background: var(--color-papel);
+    color: var(--color-texto);
+    font-family: var(--font-texto);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-titulo);
+    color: var(--color-tinta);
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cobre);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* ============================================================
+   Componentes base (reaproveitam os tokens; ver design/tokens.md)
+   ============================================================ */
+@layer components {
+  .jv-container {
+    max-width: var(--container-largo);
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  .jv-container-texto {
+    max-width: var(--container-texto);
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  .jv-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--color-cobre);
+  }
+
+  .jv-h1 {
+    font-family: var(--font-titulo);
+    font-weight: 500;
+    font-size: clamp(32px, 4.4vw, 48px);
+    line-height: 1.14;
+    color: var(--color-tinta);
+  }
+  .jv-h2 {
+    font-family: var(--font-titulo);
+    font-weight: 500;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.15;
+    color: var(--color-tinta);
+  }
+
+  .jv-body {
+    font-family: var(--font-texto);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-texto);
+  }
+
+  .jv-btn {
+    display: inline-block;
+    font-family: var(--font-texto);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-papel);
+    background: var(--color-cobre);
+    text-decoration: none;
+    padding: 15px 26px;
+    border-radius: var(--radius-doc);
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .jv-btn:hover {
+    background: var(--color-cobre-hover);
+  }
+
+  .jv-btn-ghost {
+    display: inline-block;
+    font-family: var(--font-texto);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-tinta);
+    text-decoration: none;
+    padding: 15px 20px;
+    border: 1.5px solid var(--color-tinta);
+    border-radius: var(--radius-doc);
+    background: transparent;
+    cursor: pointer;
+  }
+  .jv-btn-ghost:hover {
+    background: var(--color-papel-hover);
+  }
+
+  .jv-card {
+    background: var(--color-papel-card);
+    border: 1px solid var(--color-papel-border);
+    border-radius: var(--radius-doc);
+    padding: 24px;
+  }
+}

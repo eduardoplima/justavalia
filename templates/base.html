@@ -1,0 +1,26 @@
+{% load static %}<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Justavalia{% endblock %}</title>
+  <link rel="icon" href="{% static 'img/logo-simbolo-monograma.svg' %}" type="image/svg+xml">
+  {# Fontes auto-hospedadas: precarrega os subsets latinos para reduzir FCP/CLS. #}
+  <link rel="preload" href="{% static 'fonts/newsreader-latin.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{% static 'fonts/sourcesans3-latin.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-papel text-texto font-texto">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-cobre focus:text-papel focus:px-4 focus:py-2 focus:rounded-doc">Pular para o conteúdo</a>
+  {% block header %}{% include "partials/header.html" %}{% endblock %}
+  <main id="conteudo">
+    {% block content %}{% endblock %}
+  </main>
+  {% include "partials/footer.html" %}
+  {% include "partials/whatsapp_fab.html" %}
+  <script src="https://unpkg.com/htmx.org@2"></script>
+  <script src="https://unpkg.com/alpinejs@3" defer></script>
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>

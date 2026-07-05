@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<header style="position:sticky;top:0;z-index:60;background:#F6F3EC;border-bottom:1px solid #DDD6C8">
+  <div style="max-width:1140px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;flex-wrap:wrap;gap:14px 22px">
+    <a href="Home.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <dc-import name="Selo" variante="monograma" tamanho="38" hint-size="38px,38px"></dc-import>
+      <span style="font-family:'Newsreader',serif;font-size:23px;font-weight:600;color:#16302B;letter-spacing:0.2px">Justavalia</span>
+    </a>
+    <nav aria-label="Principal" style="display:flex;flex-wrap:wrap;gap:4px 20px;margin-left:auto;align-items:center">
+      <a href="Como-funciona.dc.html" style="font-family:'Source Sans 3',sans-serif;font-size:15.5px;color:#3C4742;text-decoration:none;padding:6px 2px;border-bottom:{{ bComo }}" style-hover="color:#16302B" style-focus="outline:2px solid #B4611F;outline-offset:2px">Como funciona</a>
+      <a href="Advogados.dc.html" style="font-family:'Source Sans 3',sans-serif;font-size:15.5px;color:#3C4742;text-decoration:none;padding:6px 2px;border-bottom:{{ bAdv }}" style-hover="color:#16302B" style-focus="outline:2px solid #B4611F;outline-offset:2px">Para advogados</a>
+      <a href="Quem-assina.dc.html" style="font-family:'Source Sans 3',sans-serif;font-size:15.5px;color:#3C4742;text-decoration:none;padding:6px 2px;border-bottom:{{ bQuem }}" style-hover="color:#16302B" style-focus="outline:2px solid #B4611F;outline-offset:2px">Quem assina</a>
+      <a href="FAQ.dc.html" style="font-family:'Source Sans 3',sans-serif;font-size:15.5px;color:#3C4742;text-decoration:none;padding:6px 2px;border-bottom:{{ bFaq }}" style-hover="color:#16302B" style-focus="outline:2px solid #B4611F;outline-offset:2px">FAQ</a>
+      <a href="https://wa.me/5500000000000" title="[substituir pelo número de WhatsApp]" style="font-family:'Source Sans 3',sans-serif;font-size:15.5px;font-weight:600;color:#F6F3EC;background:#B4611F;text-decoration:none;padding:10px 18px;border-radius:4px" style-hover="background:#94500F" style-focus="outline:2px solid #16302B;outline-offset:2px">Pedir minha avaliação</a>
+    </nav>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:80},&quot;ativa&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;como&quot;,&quot;advogados&quot;,&quot;quem&quot;,&quot;faq&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const a = this.props.ativa ?? '';
+    const on = '2px solid #B4611F', off = '2px solid transparent';
+    return {
+      bComo: a === 'como' ? on : off,
+      bAdv: a === 'advogados' ? on : off,
+      bQuem: a === 'quem' ? on : off,
+      bFaq: a === 'faq' ? on : off
+    };
+  }
+}
+</script>
+</body>
+</html>

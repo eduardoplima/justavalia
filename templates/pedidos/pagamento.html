@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Pagamento — {{ pedido.numero }} — Justavalia{% endblock %}
+
+{% block content %}
+<section class="jv-container-texto py-section">
+  <p class="jv-eyebrow">PEDIDO {{ pedido.numero }}</p>
+  <h1 class="jv-h1 mt-3">Pagamento por PIX</h1>
+  <p class="jv-body mt-4 max-w-[60ch]">
+    Valor: <strong>R$ {{ pedido.preco_centavos|slice:':-2' }},{{ pedido.preco_centavos|slice:'-2:' }}</strong>
+    · imóvel residencial urbano. Após a confirmação do pagamento, liberamos o roteiro de envio.
+  </p>
+
+  {% if pagamento %}
+  <div class="jv-card mt-8">
+    <p class="font-mono text-[11.5px] tracking-[2px] text-texto-suave">PIX COPIA E COLA</p>
+    <code class="mt-2 block break-all rounded-doc bg-papel px-3 py-2.5 font-mono text-[13px] text-texto">{{ pagamento.copia_e_cola }}</code>
+  </div>
+  {% endif %}
+
+  <form method="post" class="mt-8">
+    {% csrf_token %}
+    <button type="submit" class="jv-btn">Simular pagamento (dev)</button>
+  </form>
+  <p class="mt-3 font-mono text-[11.5px] tracking-[1px] text-texto-suave">
+    AMBIENTE DE DESENVOLVIMENTO · O PAGAMENTO REAL SERÁ FEITO PELO PROVEDOR PIX ESCOLHIDO
+  </p>
+</section>
+{% endblock %}

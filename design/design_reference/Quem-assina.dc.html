@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Source+Sans+3:wght@400..700&family=Spline+Sans+Mono:wght@400..600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #F6F3EC; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;background:#F6F3EC">
+  <dc-import name="Header" ativa="quem" hint-size="100%,64px"></dc-import>
+
+  <section data-screen-label="Quem assina" style="max-width:1140px;margin:0 auto;padding:64px 20px 8px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:48px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">QUEM ASSINA</span>
+        <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(32px,4.4vw,48px);line-height:1.14;color:#16302B;text-wrap:pretty">Todo parecer tem nome, registro e responsabilidade.</h1>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:18px;line-height:1.6;color:#3C4742;max-width:58ch">A Justavalia não é uma ferramenta que gera documentos sozinha. Cada PTAM é revisado e assinado por um avaliador imobiliário credenciado — que responde pessoalmente pelo que assina.</p>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div style="background:#FDFCF8;border:1px solid #E4DECF;box-shadow:0 14px 36px rgba(22,48,43,0.12);padding:28px;width:min(360px,86vw);display:flex;flex-direction:column;gap:18px">
+          <div style="width:110px;height:110px;border-radius:50%;background:repeating-linear-gradient(45deg,#EFEADC,#EFEADC 8px,#E7E1D2 8px,#E7E1D2 16px);display:flex;align-items:center;justify-content:center;align-self:center">
+            <span style="font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:1px;color:#7A7361;text-align:center">FOTO DO<br>AVALIADOR</span>
+          </div>
+          <div style="text-align:center;display:flex;flex-direction:column;gap:6px">
+            <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:24px;color:#16302B">[Nome do Avaliador]</h2>
+            <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:1.6px;color:#B4611F">CRECI [nº] · CNAI [nº]</span>
+          </div>
+          <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15.5px;line-height:1.6;color:#3C4742">[Bio do avaliador: formação, tempo de atuação, especialidades e região de experiência. 2–3 frases.]</p>
+          <div style="border-top:1px solid #E4DECF;padding-top:14px;display:flex;flex-direction:column;gap:4px">
+            <svg width="130" height="28" viewBox="0 0 130 28" aria-hidden="true"><path d="M6,20 C24,4 34,26 52,10 C62,2 74,20 104,8" fill="none" stroke="#B4611F" stroke-width="2" stroke-linecap="round"></path></svg>
+            <span style="font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:1px;color:#5B655F">ASSINATURA DIGITAL · ICP-BRASIL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="O modelo, sem rodeio" style="max-width:820px;margin:0 auto;padding:72px 20px 8px">
+    <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">O MODELO, SEM RODEIO</span>
+    <h2 style="margin:12px 0 28px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.2vw,36px);color:#16302B;text-wrap:pretty">A tecnologia acelera. A responsabilidade é de quem assina.</h2>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:22px 24px;display:flex;flex-direction:column;gap:6px">
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">O que a tecnologia faz</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#3C4742">Levanta comparativos de mercado, organiza dados e prepara a base da análise. É por isso que conseguimos entregar em dias, não em semanas.</p>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:22px 24px;display:flex;flex-direction:column;gap:6px">
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">O que o avaliador faz</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#3C4742">Revisa a análise, confere os comparativos, ajusta o que a máquina não enxerga — e assina. Sem revisão e assinatura, nenhum parecer sai.</p>
+      </div>
+      <div style="background:#16302B;padding:22px 24px;display:flex;flex-direction:column;gap:6px">
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#F6F3EC">Por que isso importa</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#C4CDC6">Um documento sem responsável identificado não vale muito num inventário. O nosso tem nome, registro profissional e assinatura digital verificável. A assinatura é o produto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Credenciais" style="max-width:820px;margin:0 auto;padding:64px 20px 88px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+      <div style="border-top:2px solid #16302B;padding:18px 4px 0;display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2px;color:#B4611F">CRECI</span>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Registro profissional ativo no Conselho Regional de Corretores de Imóveis. Nº [preencher].</p>
+      </div>
+      <div style="border-top:2px solid #16302B;padding:18px 4px 0;display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2px;color:#B4611F">CNAI</span>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Inscrição no Cadastro Nacional de Avaliadores Imobiliários, do COFECI. Nº [preencher].</p>
+      </div>
+      <div style="border-top:2px solid #16302B;padding:18px 4px 0;display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2px;color:#B4611F">ICP-BRASIL</span>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Assinatura digital com certificado qualificado, verificável no validador oficial do ITI.</p>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;padding-top:56px">
+      <a href="https://wa.me/5500000000000" title="[substituir pelo número de WhatsApp]" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#F6F3EC;background:#B4611F;text-decoration:none;padding:16px 30px;border-radius:4px" style-hover="background:#94500F" style-focus="outline:2px solid #16302B;outline-offset:2px">Pedir minha avaliação</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,380px"></dc-import>
+  <dc-import name="Zap" hint-size="1px,1px"></dc-import>
+</div>
+</x-dc>
+</body>
+</html>
