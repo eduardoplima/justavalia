@@ -41,7 +41,7 @@ seed: ## Popula dados de exemplo (stub na Fase 0)
 
 styleguide: ## Builda o CSS e mostra a URL do styleguide interno
 	$(MAKE) css
-	@echo "Styleguide: http://localhost:8000/styleguide/ (rode 'make up' e abra no navegador)"
+	@echo "Styleguide: http://localhost:8010/styleguide/ (rode 'make up' e abra no navegador)"
 
 css: ## Builda o CSS do tema (Tailwind standalone via uv, sem Node)
 	uv run tailwindcss -i justavalia/static/src/input.css -o justavalia/static/css/app.css --minify
