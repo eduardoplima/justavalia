@@ -1,7 +1,7 @@
 {% load static %}
 <header class="sticky top-0 z-50 bg-papel border-b border-linha" x-data="{ open: false }">
   <div class="jv-container flex items-center flex-wrap gap-x-6 gap-y-3 py-3">
-    <a href="#" class="flex items-center gap-2.5 no-underline">
+    <a href="{% url 'site_publico:home' %}" class="flex items-center gap-2.5 no-underline">
       <img src="{% static 'img/logo-lockup-horizontal.svg' %}" alt="Justavalia" class="h-[34px] w-auto">
     </a>
 
@@ -11,6 +11,7 @@
       @click="open = !open"
       :aria-expanded="open.toString()"
       aria-controls="menu-principal"
+      :aria-label="open ? 'Fechar menu' : 'Abrir menu'"
       aria-label="Abrir menu"
     >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
@@ -26,12 +27,12 @@
       :class="open ? 'flex' : 'hidden'"
       class="md:flex flex-col md:flex-row w-full md:w-auto basis-full md:basis-auto items-start md:items-center gap-4 md:gap-6 md:ml-auto pb-4 md:pb-0"
     >
-      <a href="#" class="font-texto text-[15.5px] text-texto no-underline hover:text-tinta focus-visible:outline-2 focus-visible:outline-cobre">Home</a>
-      <a href="#" class="font-texto text-[15.5px] text-texto no-underline hover:text-tinta focus-visible:outline-2 focus-visible:outline-cobre">Como funciona</a>
-      <a href="#" class="font-texto text-[15.5px] text-texto no-underline hover:text-tinta focus-visible:outline-2 focus-visible:outline-cobre">Para advogados</a>
-      <a href="#" class="font-texto text-[15.5px] text-texto no-underline hover:text-tinta focus-visible:outline-2 focus-visible:outline-cobre">Quem assina</a>
-      <a href="#" class="font-texto text-[15.5px] text-texto no-underline hover:text-tinta focus-visible:outline-2 focus-visible:outline-cobre">FAQ</a>
-      <a href="#" class="jv-btn w-full text-center md:w-auto">Pedir minha avaliação</a>
+      {% include "partials/_navlink.html" with url_name="site_publico:home" active_name="home" label="Home" %}
+      {% include "partials/_navlink.html" with url_name="site_publico:como_funciona" active_name="como_funciona" label="Como funciona" %}
+      {% include "partials/_navlink.html" with url_name="site_publico:advogados" active_name="advogados" label="Para advogados" %}
+      {% include "partials/_navlink.html" with url_name="site_publico:quem_assina" active_name="quem_assina" label="Quem assina" %}
+      {% include "partials/_navlink.html" with url_name="site_publico:faq" active_name="faq" label="FAQ" %}
+      <a href="https://wa.me/55[NUMERO]" class="jv-btn w-full text-center md:w-auto">Pedir minha avaliação</a>
     </nav>
   </div>
 </header>

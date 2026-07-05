@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Justavalia — avaliação de imóveis 100% remota, com parecer técnico assinado{% endblock %}
+
+{% block content %}
+
+{# ===================== HERO ===================== #}
+<section class="jv-container py-section grid gap-12 lg:grid-cols-2 items-center">
+  <div class="flex flex-col gap-6 max-w-[56ch]">
+    <span class="jv-eyebrow">PTAM · Parecer Técnico de Avaliação Mercadológica</span>
+    <h1 class="jv-h1">Seu imóvel avaliado por um profissional credenciado. 100% online, em 5 dias úteis.</h1>
+    <p class="jv-body">Você recebe um PTAM em PDF — o parecer técnico de avaliação mercadológica — revisado e assinado digitalmente por avaliador com CRECI e CNAI.</p>
+    <div class="flex flex-wrap items-center gap-3.5">
+      <a href="https://wa.me/55[NUMERO]" class="jv-btn">Pedir minha avaliação</a>
+      <a href="{% url 'site_publico:como_funciona' %}" class="jv-btn-ghost">Como funciona</a>
+    </div>
+    <span class="jv-eyebrow tracking-[1.4px] text-texto-suave normal-case">R$ 299 · preço fixo · imóvel residencial urbano</span>
+  </div>
+
+  <div class="flex justify-center">
+    <div class="relative w-[min(350px,86vw)]">
+      <div class="bg-papel-card border border-papel-border shadow-doc p-6 flex flex-col gap-3" style="aspect-ratio:1/1.38">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-titulo text-[16px] font-semibold text-tinta">Justavalia</span>
+          <span class="font-mono text-[9px] tracking-[1px] text-texto-suave">PTAM Nº 2026-0147</span>
+        </div>
+        <div class="h-px bg-papel-border"></div>
+        <span class="font-mono text-[9.5px] tracking-[1.8px] text-tinta leading-[1.6]">PARECER TÉCNICO DE AVALIAÇÃO MERCADOLÓGICA</span>
+        <div class="flex flex-col gap-2">
+          <div class="h-[7px] rounded-sm bg-papel-border" style="width:92%"></div>
+          <div class="h-[7px] rounded-sm bg-papel-border" style="width:78%"></div>
+          <div class="h-[7px] rounded-sm bg-papel-border" style="width:86%"></div>
+        </div>
+        <div class="flex-1 flex items-center justify-center" style="min-height:64px;background:repeating-linear-gradient(45deg,var(--color-papel-hover),var(--color-papel-hover) 8px,var(--color-papel-border) 8px,var(--color-papel-border) 16px)">
+          <span class="font-mono text-[9px] tracking-[1.4px] text-texto-suave" aria-hidden="true">REGISTRO FOTOGRÁFICO</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="h-[7px] rounded-sm bg-papel-border" style="width:84%"></div>
+          <div class="h-[7px] rounded-sm bg-papel-border" style="width:65%"></div>
+        </div>
+        <div class="mt-auto flex flex-col gap-1 border-t border-papel-border pt-2.5">
+          <img src="{% static 'img/rubrica.svg' %}" alt="" aria-hidden="true" class="h-[26px] w-auto">
+          <span class="font-mono text-[8.5px] tracking-[1px] text-texto-suave">[NOME DO AVALIADOR] · CRECI [nº] · CNAI [nº]</span>
+          <span class="font-mono text-[8.5px] tracking-[1px] text-cobre">ASSINADO DIGITALMENTE · ICP-BRASIL</span>
+        </div>
+      </div>
+      <img src="{% static 'img/logo-simbolo-monograma.svg' %}" alt="" aria-hidden="true"
+           class="absolute w-[92px] h-[92px] opacity-90"
+           style="top:-20px;right:-18px;transform:rotate(-9deg)">
+    </div>
+  </div>
+</section>
+
+{# ===================== BARRA DE CONFIANÇA ===================== #}
+<section class="bg-tinta border-t border-b border-tinta-border">
+  <div class="jv-container py-4 flex flex-wrap justify-center gap-x-9 gap-y-2 font-mono text-xs tracking-[1.6px] text-texto-escuro-suave">
+    <span>CRECI [nº]</span>
+    <span class="text-texto-escuro-legenda" aria-hidden="true">·</span>
+    <span>CNAI [nº]</span>
+    <span class="text-texto-escuro-legenda" aria-hidden="true">·</span>
+    <span>ASSINATURA DIGITAL ICP-BRASIL</span>
+    <span class="text-texto-escuro-legenda" aria-hidden="true">·</span>
+    <span>VERIFICÁVEL NO VALIDADOR OFICIAL DO ITI</span>
+  </div>
+</section>
+
+{# ===================== PARA QUE SERVE ===================== #}
+<section class="jv-container pt-section pb-2">
+  <span class="jv-eyebrow">Para que serve</span>
+  <h2 class="jv-h2 mt-3 mb-9 max-w-[26ch]">Uma referência técnica de valor, quando o processo exige — ou a negociação pede.</h2>
+  <div class="grid gap-4 grid-cols-[repeat(auto-fit,minmax(210px,1fr))]">
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="text-tinta" aria-hidden="true"><rect x="6" y="4" width="13" height="17" rx="1"></rect><path d="M4 7v14h11"></path><line x1="9.5" y1="9" x2="15.5" y2="9"></line><line x1="9.5" y1="12.5" x2="15.5" y2="12.5"></line></svg>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">Inventário e partilha</h3>
+      <p class="jv-body text-[15px]">Valor de referência para inventário extrajudicial e divisão de bens entre herdeiros.</p>
+    </div>
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-tinta" aria-hidden="true"><circle cx="9" cy="12" r="5"></circle><circle cx="15" cy="12" r="5"></circle></svg>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">Divórcio</h3>
+      <p class="jv-body text-[15px]">Base neutra e assinada para a partilha do imóvel do casal.</p>
+    </div>
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="text-tinta" aria-hidden="true"><line x1="5" y1="19" x2="19" y2="5"></line><circle cx="7.5" cy="7.5" r="2.5"></circle><circle cx="16.5" cy="16.5" r="2.5"></circle></svg>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">ITCMD e planejamento patrimonial</h3>
+      <p class="jv-body text-[15px]">Fundamento técnico de valor para doações, holding familiar e sucessão.</p>
+    </div>
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-tinta" aria-hidden="true"><path d="M4 9h13l-3-3"></path><path d="M20 15H7l3 3"></path></svg>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">Compra, venda e negociação</h3>
+      <p class="jv-body text-[15px]">Um número técnico na mesa — para pedir, oferecer ou contrapor com segurança.</p>
+    </div>
+    <div class="jv-card flex flex-col gap-3">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="text-tinta" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="1"></rect><path d="M4 8l2-4h12l2 4"></path><line x1="10" y1="12" x2="14" y2="12"></line></svg>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">Atualização de patrimônio</h3>
+      <p class="jv-body text-[15px]">Valor de mercado atual documentado, para registros e decisões da família.</p>
+    </div>
+  </div>
+</section>
+
+{# ===================== COMO FUNCIONA (RESUMO) ===================== #}
+<section class="jv-container pt-section pb-2">
+  <span class="jv-eyebrow">Como funciona</span>
+  <h2 class="jv-h2 mt-3 mb-9 max-w-[24ch]">Quatro passos, tudo pela internet.</h2>
+  <div class="grid gap-4 grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
+    <div class="border-t-2 border-tinta pt-5 flex flex-col gap-2.5">
+      <span class="jv-eyebrow tracking-[2px]">01</span>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">Você envia</h3>
+      <p class="jv-body text-[15px]">Documentos, fotos e vídeo do imóvel, seguindo nosso roteiro guiado.</p>
+    </div>
+    <div class="border-t-2 border-tinta pt-5 flex flex-col gap-2.5">
+      <span class="jv-eyebrow tracking-[2px]">02</span>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">Analisamos o mercado</h3>
+      <p class="jv-body text-[15px]">Comparativos e dados de mercado, com apoio de tecnologia.</p>
+    </div>
+    <div class="border-t-2 border-tinta pt-5 flex flex-col gap-2.5">
+      <span class="jv-eyebrow tracking-[2px]">03</span>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">Um avaliador assina</h3>
+      <p class="jv-body text-[15px]">Avaliador credenciado (CRECI e CNAI) revisa cada parecer e assina pessoalmente.</p>
+    </div>
+    <div class="border-t-2 border-tinta pt-5 flex flex-col gap-2.5">
+      <span class="jv-eyebrow tracking-[2px]">04</span>
+      <h3 class="font-titulo font-semibold text-[20px] text-tinta">Você recebe o PDF</h3>
+      <p class="jv-body text-[15px]">PTAM assinado digitalmente, em até 5 dias úteis.</p>
+    </div>
+  </div>
+  <p class="mt-7">
+    <a href="{% url 'site_publico:como_funciona' %}" class="font-texto text-base font-semibold text-cobre underline underline-offset-4">Ver o processo completo, com checklist de documentos →</a>
+  </p>
+</section>
+
+{# ===================== O QUE VOCÊ RECEBE (ANATOMIA DO PTAM) ===================== #}
+<section class="jv-container pt-section pb-2">
+  <div class="grid gap-12 lg:grid-cols-2 items-start">
+    <div>
+      <span class="jv-eyebrow">O que você recebe</span>
+      <h2 class="jv-h2 mt-3 mb-5">A anatomia do PTAM</h2>
+      <p class="jv-body text-[16.5px] max-w-[52ch]">Um documento completo, estruturado para ser lido — por você, pelo advogado, pelo cartório.</p>
+    </div>
+    <div class="flex flex-col gap-2.5">
+      <div class="jv-card flex gap-3.5 items-baseline py-4">
+        <span class="jv-eyebrow tracking-[1px]">§1</span>
+        <div><strong class="font-texto text-base text-tinta">Identificação do imóvel</strong><span class="font-texto text-[15px] text-texto-suave"> — matrícula, endereço, características.</span></div>
+      </div>
+      <div class="jv-card flex gap-3.5 items-baseline py-4">
+        <span class="jv-eyebrow tracking-[1px]">§2</span>
+        <div><strong class="font-texto text-base text-tinta">Metodologia e comparativos</strong><span class="font-texto text-[15px] text-texto-suave"> — como se chegou ao valor, com dados de mercado.</span></div>
+      </div>
+      <div class="jv-card flex gap-3.5 items-baseline py-4">
+        <span class="jv-eyebrow tracking-[1px]">§3</span>
+        <div><strong class="font-texto text-base text-tinta">Registro fotográfico</strong><span class="font-texto text-[15px] text-texto-suave"> — as imagens que você enviou, organizadas e datadas.</span></div>
+      </div>
+      <div class="jv-card flex gap-3.5 items-baseline py-4">
+        <span class="jv-eyebrow tracking-[1px]">§4</span>
+        <div><strong class="font-texto text-base text-tinta">Pressupostos e ressalvas</strong><span class="font-texto text-[15px] text-texto-suave"> — o que o parecer cobre e o que não cobre, por escrito.</span></div>
+      </div>
+      <div class="jv-card flex gap-3.5 items-baseline py-4">
+        <span class="jv-eyebrow tracking-[1px]">§5</span>
+        <div><strong class="font-texto text-base text-tinta">Assinatura digital verificável</strong><span class="font-texto text-[15px] text-texto-suave"> — ICP-Brasil, conferível no validador oficial do ITI.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===================== TRANSPARÊNCIA DE ESCOPO ===================== #}
+<section class="jv-container pt-section pb-2">
+  <span class="jv-eyebrow">Transparência de escopo</span>
+  <h2 class="jv-h2 mt-3 mb-3 max-w-[26ch]">Para que o PTAM serve — dito com clareza.</h2>
+  <p class="jv-body text-[16.5px] mb-8 max-w-[60ch]">Se o seu caso pedir outro tipo de documento, dizemos antes de você pagar.</p>
+  <div class="grid gap-4 grid-cols-[repeat(auto-fit,minmax(290px,1fr))]">
+    <div class="border-[1.5px] border-tinta bg-papel-card">
+      <div class="bg-tinta px-5 py-3 font-mono text-[12.5px] uppercase tracking-[2.4px] text-papel">SERVE PARA</div>
+      <ul class="flex flex-col gap-3 px-5 pt-5 pb-6 font-texto text-base leading-[1.5] text-tinta">
+        <li class="flex gap-2.5">
+          <svg width="18" height="18" viewBox="0 0 24 24" class="flex-none mt-0.5 text-tinta" aria-hidden="true"><use href="{% static 'img/icones.svg' %}#jv-icon-check"></use></svg>
+          Inventário extrajudicial e partilha
+        </li>
+        <li class="flex gap-2.5">
+          <svg width="18" height="18" viewBox="0 0 24 24" class="flex-none mt-0.5 text-tinta" aria-hidden="true"><use href="{% static 'img/icones.svg' %}#jv-icon-check"></use></svg>
+          Divórcio e divisão de bens
+        </li>
+        <li class="flex gap-2.5">
+          <svg width="18" height="18" viewBox="0 0 24 24" class="flex-none mt-0.5 text-tinta" aria-hidden="true"><use href="{% static 'img/icones.svg' %}#jv-icon-check"></use></svg>
+          ITCMD e planejamento patrimonial
+        </li>
+        <li class="flex gap-2.5">
+          <svg width="18" height="18" viewBox="0 0 24 24" class="flex-none mt-0.5 text-tinta" aria-hidden="true"><use href="{% static 'img/icones.svg' %}#jv-icon-check"></use></svg>
+          Referência para compra, venda e negociação
+        </li>
+      </ul>
+      <p class="px-5 pb-5 font-texto text-[14.5px] leading-[1.55] text-texto-suave">Não cobre financiamento bancário, perícia judicial nem laudo de engenharia com ART. <a href="{% url 'site_publico:faq' %}" class="text-cobre font-semibold">Entenda por quê</a>.</p>
+    </div>
+  </div>
+</section>
+
+{# ===================== PREÇO ===================== #}
+<section class="bg-tinta mt-section">
+  <div class="jv-container py-section grid gap-10 grid-cols-[repeat(auto-fit,minmax(280px,1fr))] items-center">
+    <div class="flex flex-col gap-2">
+      <span class="font-mono text-xs uppercase tracking-[2.4px] text-cobre-claro">Preço fixo · sem surpresa</span>
+      <div class="flex items-baseline gap-3 flex-wrap">
+        <span class="font-titulo font-medium text-papel leading-none" style="font-size:clamp(56px,7vw,84px)">R$ 299</span>
+        <span class="font-texto text-[17px] text-texto-escuro-suave">imóvel residencial urbano</span>
+      </div>
+      <p class="font-texto text-base leading-[1.55] text-texto-escuro-suave mt-2.5 max-w-[52ch]">Comercial, rural e imóveis de alto valor: sob consulta pelo WhatsApp.</p>
+    </div>
+    <div class="flex justify-start flex-wrap gap-3.5">
+      <a href="https://wa.me/55[NUMERO]" class="jv-btn">Pedir minha avaliação</a>
+    </div>
+  </div>
+</section>
+
+{# ===================== FAQ CURTO ===================== #}
+<section class="jv-container-texto pt-section pb-2">
+  <span class="jv-eyebrow">Perguntas frequentes</span>
+  <h2 class="jv-h2 mt-3 mb-7">O que mais perguntam</h2>
+  <div class="flex flex-col gap-2.5">
+    <details class="jv-card">
+      <summary class="font-texto text-[17px] font-semibold text-tinta cursor-pointer">O que é um PTAM e quem pode emitir?</summary>
+      <p class="jv-body text-base mt-3">É o Parecer Técnico de Avaliação Mercadológica: um documento que fundamenta o valor de mercado de um imóvel. Pode ser emitido por corretor de imóveis com CRECI ativo e inscrição no CNAI, o Cadastro Nacional de Avaliadores Imobiliários.</p>
+    </details>
+    <details class="jv-card">
+      <summary class="font-texto text-[17px] font-semibold text-tinta cursor-pointer">A vistoria por vídeo vale?</summary>
+      <p class="jv-body text-base mt-3">A norma do COFECI exige que a vistoria tenha data — e ela consta no parecer. A modalidade remota é declarada abertamente no documento, sem disfarce.</p>
+    </details>
+    <details class="jv-card">
+      <summary class="font-texto text-[17px] font-semibold text-tinta cursor-pointer">Serve para financiamento bancário?</summary>
+      <p class="jv-body text-base mt-3">Não. Bancos exigem laudo próprio, feito por avaliador credenciado pela instituição. O PTAM serve para inventário, divórcio, ITCMD, planejamento patrimonial e negociação.</p>
+    </details>
+    <details class="jv-card">
+      <summary class="font-texto text-[17px] font-semibold text-tinta cursor-pointer">Quanto tempo demora?</summary>
+      <p class="jv-body text-base mt-3">Até 5 dias úteis a partir do recebimento completo de documentos, fotos e vídeo.</p>
+    </details>
+  </div>
+  <p class="mt-6">
+    <a href="{% url 'site_publico:faq' %}" class="font-texto text-base font-semibold text-cobre underline underline-offset-4">Ver todas as perguntas →</a>
+  </p>
+</section>
+
+{# ===================== CTA FINAL ===================== #}
+<section class="jv-container py-section flex flex-col items-center text-center gap-5">
+  <img src="{% static 'img/logo-simbolo-monograma.svg' %}" alt="" aria-hidden="true" class="w-[72px] h-[72px]">
+  <h2 class="jv-h2 max-w-[24ch]">Comece pelo WhatsApp. Em até 5 dias úteis, o parecer está assinado.</h2>
+  <a href="https://wa.me/55[NUMERO]" class="jv-btn">Pedir minha avaliação</a>
+</section>
+
+{% endblock %}

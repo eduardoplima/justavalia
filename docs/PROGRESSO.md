@@ -9,7 +9,7 @@ Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas m
 |---|---|---|
 | 0 | Fundação (skeleton, compose, CI, subagentes) | ✅ Concluída |
 | 1 | Identidade → tema Tailwind | ✅ Concluída |
-| 2 | Site público | ⬜ Pendente |
+| 2 | Site público | ✅ Concluída |
 | 3 | Pedido + pagamento (mock) | ⬜ Pendente |
 | 4 | Upload resumível + protocolo guiado | ⬜ Pendente |
 | 5 | Pipeline de processamento | ⬜ Pendente |
@@ -62,6 +62,27 @@ Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas m
 - Styleguide gated por `SHOW_STYLEGUIDE` (default = DEBUG) — não vaza em produção.
 - Correção de fundação capturada: `STATICFILES_DIRS` apontava para `BASE_DIR/static`
   (inexistente); ajustado para `BASE_DIR/justavalia/static`.
+
+## Fase 2 — checklist
+
+- [x] Roteamento das 7 páginas (`site_publico/urls.py`, TemplateView) + nav ativa (partial `_navlink`)
+- [x] Home, Como funciona, Para advogados, Quem assina, FAQ (cópia literal dos `design_reference`)
+- [x] Privacidade e Termos (esqueleto com `[PLACEHOLDER]` jurídico; escopo respeita guardrail #3)
+- [x] Header/footer com links reais (`{% url %}`); CTA → WhatsApp; placeholders de Go-Live preservados
+- [x] Testes de rota/nav/`<h1>` único (`tests/test_site_publico.py`); suíte **26 passed**
+- [x] **Aceite: Lighthouse mobile ≥ 90** em todas as 7 páginas (perf 93–95, a11y 95–96) — medido
+
+### Decisões (Fase 2)
+
+- **Páginas construídas em paralelo** por subagentes dev-frontend (um por página), integradas pelo
+  orquestrador; Privacidade/Termos escritas pelo orquestrador.
+- **Fontes auto-hospedadas** (`justavalia/static/fonts/`, latin + latin-ext woff2 + `@font-face`
+  no tema) no lugar do Google Fonts CDN — derrubou FCP de 2.6 s → 1.2 s e foi o que levou a
+  performance de 87 → 94. Preload dos subsets latinos no `base.html`.
+- **`GZipMiddleware`** ligado (compressão de texto).
+- Favicon = monograma SVG.
+- URL slugs em pt-BR (`/como-funciona/`, `/para-advogados/`, `/quem-assina/`, `/faq/`,
+  `/privacidade/`, `/termos/`).
 
 ## Registro de decisões (Fase 0)
 

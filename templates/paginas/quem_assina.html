@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Quem assina — Justavalia{% endblock %}
+
+{% block content %}
+<section class="jv-container py-section">
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-12 items-start">
+    <div class="flex flex-col gap-5">
+      <p class="jv-eyebrow m-0">Quem assina</p>
+      <h1 class="jv-h1 m-0">Todo parecer tem nome, registro e responsabilidade.</h1>
+      <p class="jv-body m-0 max-w-[58ch]">
+        A Justavalia não é uma ferramenta que gera documentos sozinha. Cada PTAM é
+        revisado e assinado por um avaliador imobiliário credenciado — que responde
+        pessoalmente pelo que assina.
+      </p>
+    </div>
+
+    <div class="flex justify-center">
+      <div class="jv-card shadow-card flex flex-col gap-4 w-[min(360px,86vw)]">
+        <div
+          aria-hidden="true"
+          class="h-[110px] w-[110px] rounded-full bg-papel-border border border-linha flex items-center justify-center self-center"
+        >
+          <span class="font-mono text-[9px] tracking-[1px] text-texto-suave text-center leading-tight">FOTO DO<br>AVALIADOR</span>
+        </div>
+
+        <div class="text-center flex flex-col gap-1.5">
+          <h2 class="font-titulo text-tinta text-2xl font-semibold m-0">[Nome do Avaliador]</h2>
+          <span class="font-mono text-xs tracking-[1.6px] uppercase text-cobre">CRECI [nº] · CNAI [nº]</span>
+        </div>
+
+        <p class="jv-body text-[15.5px] m-0">
+          [Bio do avaliador: formação, tempo de atuação, especialidades e região de
+          experiência. 2–3 frases.]
+        </p>
+
+        <div class="border-t border-linha pt-3.5 flex flex-col gap-1">
+          <img
+            src="{% static 'img/rubrica.svg' %}"
+            alt=""
+            aria-hidden="true"
+            class="h-7 w-auto"
+          >
+          <span class="font-mono text-[9px] tracking-[1px] text-texto-suave">ASSINATURA DIGITAL · ICP-BRASIL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container-texto py-section">
+  <p class="jv-eyebrow m-0">O modelo, sem rodeio</p>
+  <h2 class="jv-h2 mt-3 mb-7">A tecnologia acelera. A responsabilidade é de quem assina.</h2>
+
+  <div class="flex flex-col gap-2.5">
+    <div class="jv-card flex flex-col gap-1.5">
+      <h3 class="font-titulo text-tinta text-xl font-semibold m-0">O que a tecnologia faz</h3>
+      <p class="jv-body text-base m-0">
+        Levanta comparativos de mercado, organiza dados e prepara a base da análise.
+        É por isso que conseguimos entregar em dias, não em semanas.
+      </p>
+    </div>
+
+    <div class="jv-card flex flex-col gap-1.5">
+      <h3 class="font-titulo text-tinta text-xl font-semibold m-0">O que o avaliador faz</h3>
+      <p class="jv-body text-base m-0">
+        Revisa a análise, confere os comparativos, ajusta o que a máquina não enxerga —
+        e assina. Sem revisão e assinatura, nenhum parecer sai.
+      </p>
+    </div>
+
+    <div class="bg-tinta rounded-doc px-6 py-5.5 flex flex-col gap-1.5">
+      <h3 class="font-titulo text-papel text-xl font-semibold m-0">Por que isso importa</h3>
+      <p class="font-texto text-base leading-relaxed text-texto-escuro-suave m-0">
+        Um documento sem responsável identificado não vale muito num inventário. O
+        nosso tem nome, registro profissional e assinatura digital verificável. A
+        assinatura é o produto.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="jv-container-texto py-section">
+  <h2 class="sr-only">Credenciais</h2>
+
+  <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
+    <div class="border-t-2 border-tinta pt-4.5 px-1 flex flex-col gap-1.5">
+      <span class="jv-eyebrow m-0">CRECI</span>
+      <p class="jv-body text-[15px] leading-relaxed m-0">
+        Registro profissional ativo no Conselho Regional de Corretores de Imóveis. Nº [preencher].
+      </p>
+    </div>
+
+    <div class="border-t-2 border-tinta pt-4.5 px-1 flex flex-col gap-1.5">
+      <span class="jv-eyebrow m-0">CNAI</span>
+      <p class="jv-body text-[15px] leading-relaxed m-0">
+        Inscrição no Cadastro Nacional de Avaliadores Imobiliários, do COFECI. Nº [preencher].
+      </p>
+    </div>
+
+    <div class="border-t-2 border-tinta pt-4.5 px-1 flex flex-col gap-1.5">
+      <span class="jv-eyebrow m-0">ICP-Brasil</span>
+      <p class="jv-body text-[15px] leading-relaxed m-0">
+        Assinatura digital com certificado qualificado, verificável no validador oficial do ITI.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex justify-center pt-14">
+    <a href="https://wa.me/55[NUMERO]" class="jv-btn">Pedir minha avaliação</a>
+  </div>
+</section>
+{% endblock %}

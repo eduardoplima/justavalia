@@ -1,0 +1,4 @@
+{% comment %}Link de nav com estado ativo. Params: url_name (namespaced), active_name (bare), label.{% endcomment %}
+<a href="{% url url_name %}"
+   class="font-texto text-[15.5px] no-underline focus-visible:outline-2 focus-visible:outline-cobre {% if request.resolver_match.url_name == active_name %}text-tinta border-b-2 border-cobre pb-0.5{% else %}text-texto hover:text-tinta{% endif %}"
+   {% if request.resolver_match.url_name == active_name %}aria-current="page"{% endif %}>{{ label }}</a>

@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Como funciona — Justavalia{% endblock %}
+
+{% block content %}
+<div class="jv-container-texto py-section flex flex-col gap-16">
+
+  <section aria-labelledby="cf-intro-titulo">
+    <span class="jv-eyebrow">Como funciona</span>
+    <h1 id="cf-intro-titulo" class="jv-h1 mt-3 mb-4">Do pedido à entrega, em até 5 dias úteis.</h1>
+    <p class="font-texto text-lg leading-relaxed text-texto max-w-[58ch]">Tudo acontece pelo WhatsApp e por um link de envio. Você não precisa receber ninguém no imóvel — precisa de um celular com câmera.</p>
+  </section>
+
+  <section aria-label="Linha do tempo do processo">
+    <ol class="flex flex-col">
+      <li class="relative ml-[9px] flex gap-5 border-l-2 border-tinta pb-8">
+        <span class="absolute -left-[11px] top-0 h-5 w-5 rounded-full border-[3px] border-papel bg-cobre" aria-hidden="true"></span>
+        <div class="flex flex-col gap-1.5 pl-7">
+          <span class="jv-eyebrow tracking-[2px]">Dia 0 · o pedido</span>
+          <h2 class="font-titulo font-semibold text-[23px] text-tinta">Você chama no WhatsApp</h2>
+          <p class="font-texto text-base leading-relaxed text-texto max-w-[56ch]">Conta em duas linhas qual é o imóvel e para que precisa do parecer. Confirmamos se o PTAM atende o seu caso — e, se não atender, dizemos na hora.</p>
+        </div>
+      </li>
+      <li class="relative ml-[9px] flex gap-5 border-l-2 border-tinta pb-8">
+        <span class="absolute -left-[11px] top-0 h-5 w-5 rounded-full border-[3px] border-papel bg-cobre" aria-hidden="true"></span>
+        <div class="flex flex-col gap-1.5 pl-7">
+          <span class="jv-eyebrow tracking-[2px]">Dia 0 · o roteiro</span>
+          <h2 class="font-titulo font-semibold text-[23px] text-tinta">Você recebe o roteiro guiado</h2>
+          <p class="font-texto text-base leading-relaxed text-texto max-w-[56ch]">Logo após o pedido, enviamos o passo a passo de fotos e vídeo e a lista de documentos. Nada de adivinhar o que filmar.</p>
+        </div>
+      </li>
+      <li class="relative ml-[9px] flex gap-5 border-l-2 border-tinta pb-8">
+        <span class="absolute -left-[11px] top-0 h-5 w-5 rounded-full border-[3px] border-papel bg-cobre" aria-hidden="true"></span>
+        <div class="flex flex-col gap-1.5 pl-7">
+          <span class="jv-eyebrow tracking-[2px]">Dias 1–2 · o envio</span>
+          <h2 class="font-titulo font-semibold text-[23px] text-tinta">Você envia documentos, fotos e vídeo</h2>
+          <p class="font-texto text-base leading-relaxed text-texto max-w-[56ch]">No seu ritmo, pelo link de envio. O prazo de 5 dias úteis começa a contar quando o material está completo.</p>
+        </div>
+      </li>
+      <li class="relative ml-[9px] flex gap-5 border-l-2 border-tinta pb-8">
+        <span class="absolute -left-[11px] top-0 h-5 w-5 rounded-full border-[3px] border-papel bg-cobre" aria-hidden="true"></span>
+        <div class="flex flex-col gap-1.5 pl-7">
+          <span class="jv-eyebrow tracking-[2px]">Dias 2–4 · a análise</span>
+          <h2 class="font-titulo font-semibold text-[23px] text-tinta">Analisamos o mercado</h2>
+          <p class="font-texto text-base leading-relaxed text-texto max-w-[56ch]">Levantamos comparativos e dados da região com apoio de tecnologia. A tecnologia acelera a análise; não substitui quem assina.</p>
+        </div>
+      </li>
+      <li class="relative ml-[9px] flex gap-5 border-l-2 border-tinta pb-8">
+        <span class="absolute -left-[11px] top-0 h-5 w-5 rounded-full border-[3px] border-papel bg-cobre" aria-hidden="true"></span>
+        <div class="flex flex-col gap-1.5 pl-7">
+          <span class="jv-eyebrow tracking-[2px]">Dias 4–5 · a revisão</span>
+          <h2 class="font-titulo font-semibold text-[23px] text-tinta">O avaliador revisa e assina</h2>
+          <p class="font-texto text-base leading-relaxed text-texto max-w-[56ch]">Um avaliador credenciado (CRECI e CNAI) revisa cada página e assina digitalmente, com certificado ICP-Brasil.</p>
+        </div>
+      </li>
+      <li class="relative ml-[9px] flex gap-5">
+        <span class="absolute -left-[11px] top-0 h-5 w-5 rounded-full border-[3px] border-papel bg-tinta" aria-hidden="true"></span>
+        <div class="flex flex-col gap-1.5 pl-7">
+          <span class="jv-eyebrow tracking-[2px] text-tinta">Até o 5º dia útil · a entrega</span>
+          <h2 class="font-titulo font-semibold text-[23px] text-tinta">Você recebe o PTAM em PDF</h2>
+          <p class="font-texto text-base leading-relaxed text-texto max-w-[56ch]">Assinado e verificável no validador oficial do ITI. É seu — para usar no inventário, no cartório, na negociação.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="cf-checklist-titulo">
+    <span class="jv-eyebrow">Checklist</span>
+    <h2 id="cf-checklist-titulo" class="jv-h2 mt-3 mb-7">O que você vai precisar</h2>
+    <div class="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+      <div class="jv-card flex flex-col gap-3.5">
+        <span class="jv-eyebrow tracking-[2px] text-tinta">Obrigatórios</span>
+        <ul class="flex flex-col gap-2.5 font-texto text-base text-tinta">
+          <li class="flex gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-[3px] shrink-0 text-tinta" aria-hidden="true"><path d="M4 12l5 5 11-11"></path></svg>
+            Matrícula atualizada do imóvel
+          </li>
+          <li class="flex gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-[3px] shrink-0 text-tinta" aria-hidden="true"><path d="M4 12l5 5 11-11"></path></svg>
+            Carnê ou espelho do IPTU
+          </li>
+        </ul>
+      </div>
+      <div class="jv-card flex flex-col gap-3.5">
+        <span class="jv-eyebrow tracking-[2px]">Ajudam, se você tiver</span>
+        <ul class="flex flex-col gap-2.5 font-texto text-base text-tinta">
+          <li class="flex gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="mt-[3px] shrink-0 text-cobre" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Habite-se
+          </li>
+          <li class="flex gap-2.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="mt-[3px] shrink-0 text-cobre" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Planta ou croqui do imóvel
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="cf-roteiro-titulo">
+    <span class="jv-eyebrow">Roteiro guiado</span>
+    <h2 id="cf-roteiro-titulo" class="jv-h2 mt-3 mb-4">Fotos e vídeo, sem adivinhação</h2>
+    <p class="font-texto text-base leading-relaxed text-texto max-w-[60ch] mb-7">Logo após o pedido, você recebe um protocolo passo a passo: o que fotografar, o que filmar e em que ordem. Um celular comum resolve.</p>
+    <div class="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))]">
+      <div class="flex flex-col gap-2 border-t-2 border-tinta pt-5">
+        <span class="jv-eyebrow text-[13px] tracking-[2px]">01 · Fachada</span>
+        <p class="font-texto text-sm leading-relaxed text-texto">Frente do imóvel, rua e entorno imediato.</p>
+      </div>
+      <div class="flex flex-col gap-2 border-t-2 border-tinta pt-5">
+        <span class="jv-eyebrow text-[13px] tracking-[2px]">02 · Ambientes</span>
+        <p class="font-texto text-sm leading-relaxed text-texto">Cada cômodo, num vídeo contínuo seguindo a ordem do roteiro.</p>
+      </div>
+      <div class="flex flex-col gap-2 border-t-2 border-tinta pt-5">
+        <span class="jv-eyebrow text-[13px] tracking-[2px]">03 · Detalhes</span>
+        <p class="font-texto text-sm leading-relaxed text-texto">Acabamentos, reformas e o que afeta o valor — para bem ou para mal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Pendências, privacidade e chamada para ação" class="flex flex-col gap-4">
+    <div class="jv-card flex flex-col gap-2">
+      <h2 class="font-titulo font-semibold text-[22px] text-tinta">E se faltar algum documento ou alguma imagem?</h2>
+      <p class="font-texto text-base leading-relaxed text-texto">A gente orienta pelo WhatsApp, item por item. Ninguém fica travado por causa de uma foto que faltou — e o prazo só corre quando o material está completo.</p>
+    </div>
+    <div class="rounded-doc bg-tinta p-6 flex flex-col gap-2">
+      <span class="jv-eyebrow text-cobre-claro">Privacidade · LGPD</span>
+      <p class="font-texto text-base leading-relaxed text-texto-escuro-suave">Seus documentos, fotos e vídeos são usados apenas para elaborar o parecer, com tratamento conforme a Lei Geral de Proteção de Dados. Não vendemos, não compartilhamos, não reaproveitamos.</p>
+    </div>
+    <div class="flex justify-center pt-10">
+      <a href="https://wa.me/55[NUMERO]" class="jv-btn">Pedir minha avaliação</a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

@@ -230,3 +230,7 @@ justavalia/static/css/app.css
 
 # Preview grande de referencia (594KB) — nao necessario no repo; usar SVGs em static/img
 design/assets/homepage-preview.png
+
+# Screenshots de verificacao (root)
+*.jpeg
+*.jpg
