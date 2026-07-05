@@ -8,6 +8,9 @@ from .base import MIDDLEWARE
 
 DEBUG = False
 
+# Provedores mock jamais em produção (MockPix aprova qualquer pagamento).
+ALLOW_MOCK_PAYMENTS = False
+
 # WhiteNoise logo após o SecurityMiddleware.
 MIDDLEWARE = [
     MIDDLEWARE[0],

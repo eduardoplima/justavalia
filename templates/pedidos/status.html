@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Pedido {{ pedido.numero }} — Justavalia{% endblock %}
+
+{% block content %}
+<section class="jv-container-texto py-section">
+  <p class="jv-eyebrow">PEDIDO {{ pedido.numero }}</p>
+  <h1 class="jv-h1 mt-3">Acompanhamento do pedido</h1>
+
+  <div class="jv-card mt-6 flex items-center justify-between gap-4">
+    <div>
+      <p class="font-mono text-[11.5px] tracking-[2px] text-texto-suave">SITUAÇÃO ATUAL</p>
+      <p class="font-titulo text-[22px] text-tinta">{{ pedido.get_status_display }}</p>
+    </div>
+    <span class="font-mono text-[11.5px] tracking-[1px] text-cobre">{{ pedido.status }}</span>
+  </div>
+
+  <h2 class="font-titulo text-tinta text-[22px] font-medium mt-10">Linha do tempo</h2>
+  <ol class="mt-4 border-l-2 border-tinta pl-6 flex flex-col gap-5">
+    {% for t in timeline %}
+      <li class="relative">
+        <span class="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-cobre border-2 border-papel" aria-hidden="true"></span>
+        <p class="font-mono text-[11.5px] tracking-[1.5px] text-cobre">
+          {{ t.criado_em|date:"d/m/Y H:i" }} · {{ t.ator_desc }}
+        </p>
+        <p class="font-texto text-[15.5px] text-texto">
+          {{ t.get_de_status_display }} → <strong class="text-tinta">{{ t.get_para_status_display }}</strong>
+          {% if t.motivo %}<span class="text-texto-suave">— {{ t.motivo }}</span>{% endif %}
+        </p>
+      </li>
+    {% empty %}
+      <li class="font-texto text-texto-suave">Sem transições registradas.</li>
+    {% endfor %}
+  </ol>
+</section>
+{% endblock %}

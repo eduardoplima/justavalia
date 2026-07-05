@@ -7,5 +7,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("healthz/", views.healthz, name="healthz"),
     path("readyz/", views.readyz, name="readyz"),
+    path("", include("justavalia.pedidos.urls")),
     path("", include("justavalia.site_publico.urls")),
 ]

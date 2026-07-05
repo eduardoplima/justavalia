@@ -10,7 +10,7 @@ Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas m
 | 0 | Fundação (skeleton, compose, CI, subagentes) | ✅ Concluída |
 | 1 | Identidade → tema Tailwind | ✅ Concluída |
 | 2 | Site público | ✅ Concluída |
-| 3 | Pedido + pagamento (mock) | ⬜ Pendente |
+| 3 | Pedido + pagamento (mock) | ✅ Concluída |
 | 4 | Upload resumível + protocolo guiado | ⬜ Pendente |
 | 5 | Pipeline de processamento | ⬜ Pendente |
 | 6 | Triagem + rascunho PTAM + PDF | ⬜ Pendente |
@@ -83,6 +83,43 @@ Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas m
 - Favicon = monograma SVG.
 - URL slugs em pt-BR (`/como-funciona/`, `/para-advogados/`, `/quem-assina/`, `/faq/`,
   `/privacidade/`, `/termos/`).
+
+## Fase 3 — checklist
+
+- [x] Máquina de estados própria (`pedidos/state_machine.py`): enum + tabela de transições +
+      `validar_transicao`; **cobertura exaustiva** (matriz 12×12 — toda transição proibida falha)
+- [x] Modelo `Pedido` + `TransicaoLog` **imutável** (append-only, ator/timestamp/payload)
+- [x] Regra inviolável: `APPROVED_FOR_SIGNATURE → SIGNED` só com ação humana autenticada
+      (`ator` persistido + `por_humano=True`); recusa task/cron/webhook/IA — **testado**
+- [x] Adapter `pagamentos/` (interface `PixProvider` + `MockPix`) trocável por `PIX_PROVIDER`
+- [x] `Pagamento` model + serviço `iniciar_pagamento`/`confirmar_pagamento` (transições atômicas)
+- [x] Fluxo público: form de pedido → pagamento (PIX mock) → página de status com timeline
+- [x] Admin (Pedido + timeline inline read-only, TransicaoLog imutável, Pagamento)
+- [x] **Aceite:** pedido navega DRAFT → AWAITING_UPLOAD via mock, timeline auditada —
+      **validado em navegador** (Playwright) e por teste de integração; suíte **205 passed**
+
+### Decisões (Fase 3)
+
+- **Máquina de estados = módulo crítico, implementada pelo orquestrador** (não delegada),
+  por TDD. Camada pura (`state_machine.py`) decide o permitido; o modelo grava estado + log
+  atômico e aplica o guard humano do SIGNED.
+- **Log de transição imutável**: `save()` recusa update, `delete()` bloqueado (trilha de
+  auditoria). Admin do log é read-only.
+- **Pagamento atrás de adapter** (`PixProvider`) com `MockPix` em dev; registro de provedores
+  em `pagamentos/service.py` pronto para Mercado Pago/Efí (troca por `PIX_PROVIDER`).
+- Transições causadas pelo pagamento são atribuídas a `pagamento:<provedor>` no log.
+- Dados do cliente mínimos (LGPD) nesta fase; ampliam nas fases seguintes.
+
+### Revisor Fase 3 — APROVADO (sem bloqueadores). Aplicado + pendências:
+
+- **Aplicado agora:** M2 — `transicionar` trava a linha (`select_for_update`) e revalida sob
+  o lock (evita dupla transição/assinatura concorrente). M3 — `get_pix_provider` recusa
+  `mock` com `DEBUG=False` (MockPix nunca em produção), com teste.
+- **Pendências rastreadas:** M1 — imutabilidade do log é a nível de app; antes do go-live,
+  trigger no PostgreSQL contra `UPDATE/DELETE` por queryset (**Fase 9**). M4 — registro de
+  consentimento LGPD (timestamp+IP+versão do termo) na coleta de PII (**Fase 4/9**). M5 — na
+  integração PIX real, aprovação deve vir de **webhook** do provedor, não de POST do cliente
+  (**quando entrar o provedor real**).
 
 ## Registro de decisões (Fase 0)
 

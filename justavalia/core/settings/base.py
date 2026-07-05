@@ -144,6 +144,8 @@ CELERY_TIMEZONE = TIME_ZONE
 
 # ---- Adapters de provedores (mock em dev; trocáveis por env var) ----
 PIX_PROVIDER = env("PIX_PROVIDER", default="mock")
+# MockPix (aprova tudo) só pode rodar onde isto for True. prod.py força False.
+ALLOW_MOCK_PAYMENTS = env.bool("ALLOW_MOCK_PAYMENTS", default=True)
 SIGNER_PROVIDER = env("SIGNER_PROVIDER", default="mock")
 NOTIFIER_PROVIDER = env("NOTIFIER_PROVIDER", default="console")
 
