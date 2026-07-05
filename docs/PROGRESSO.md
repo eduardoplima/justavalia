@@ -11,7 +11,7 @@ Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas m
 | 1 | Identidade → tema Tailwind | ✅ Concluída |
 | 2 | Site público | ✅ Concluída |
 | 3 | Pedido + pagamento (mock) | ✅ Concluída |
-| 4 | Upload resumível + protocolo guiado | ⬜ Pendente |
+| 4 | Upload resumível + protocolo guiado | ✅ Concluída |
 | 5 | Pipeline de processamento | ⬜ Pendente |
 | 6 | Triagem + rascunho PTAM + PDF | ⬜ Pendente |
 | 7 | Dashboard de revisão + assinatura | ⬜ Pendente |
@@ -120,6 +120,42 @@ Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas m
   consentimento LGPD (timestamp+IP+versão do termo) na coleta de PII (**Fase 4/9**). M5 — na
   integração PIX real, aprovação deve vir de **webhook** do provedor, não de POST do cliente
   (**quando entrar o provedor real**).
+
+## Fase 4 — checklist
+
+- [x] Presigned multipart S3/MinIO — 5 endpoints do contrato `@uppy/aws-s3`
+      (create/signPart/listParts/complete/abort), com **escopo por pedido** (nunca assina
+      chave arbitrária)
+- [x] Manifesto de mídia (`MidiaAsset`) com hash (ETag/SHA-256) e timestamp de recebimento
+- [x] UI de upload (Uppy Dashboard) com **roteiro guiado** por categoria (fachada/ambientes/
+      detalhes/vídeo/documentos), via `<script type=module>` do CDN (sem build)
+- [x] Validação de completude contra o checklist obrigatório; `concluir` → PROCESSING
+- [x] **Aceite (resumível):** upload multipart validado ponta a ponta contra MinIO real no
+      navegador (arquivo de 12 MB em múltiplas partes, ETag lido via CORS, MidiaAsset RECEBIDO).
+      Retomada garantida por `shouldUseMultipart` + `listParts` + GoldenRetriever.
+- [x] Suíte: **219 passed**
+
+### Decisões (Fase 4)
+
+- **Pesquisa (`pesquisador`) antes de codar** confirmou: plugin `@uppy/aws-s3` (v5), contrato
+  das 5 funções, boto3 `s3v4` + path-style p/ MinIO, e necessidade de expor `ETag` no CORS.
+- **Dois endpoints S3:** interno (`minio:9000`) para operações do backend; **público**
+  (`localhost:9000`) só para gerar as URLs presigned — a URL precisa ser alcançável pelo
+  navegador. `AWS_S3_PUBLIC_ENDPOINT_URL` + porta 9000 publicada; `MINIO_API_CORS_ALLOW_ORIGIN`.
+- **Segurança:** toda operação valida `MidiaAsset(pedido, upload_id, s3_key)` — o backend nunca
+  assina uma chave que ele mesmo não criou para aquele pedido.
+- Uppy carregado do CDN via ES module (sem bundler), coerente com "sem SPA build".
+
+### Revisor Fase 4 — APROVADO (sem bloqueadores). Aplicado + pendências:
+
+- **Aplicado agora:** guarda de estado no upload — `criar_multipart` recusa (409) se o pedido
+  não estiver em `AWAITING_UPLOAD`/`PENDENCY` (não aceita mídia em DRAFT/SIGNED/CANCELLED/etc.).
+- **Decisão registrada:** SHA-256 real não é capturado no multipart (só o ETag ancora
+  integridade nesta fase + `recebido_em`); o hash "de verdade" fica com o pipeline (Fase 5).
+- **Pendências de hardening (Fase 9):** criptografia at rest (SSE no bucket) — **obrigatório
+  LGPD #4**; CORS do MinIO restrito ao domínio; entropia do `numero` (`token_hex(8)`) +
+  vínculo a sessão/token do cliente + rate limiting (risco de IDOR por força-bruta na
+  capability-URL); log de acesso ao gerar URLs (Fase 8).
 
 ## Registro de decisões (Fase 0)
 

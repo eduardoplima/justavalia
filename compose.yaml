@@ -30,7 +30,10 @@ services:
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      # CORS p/ upload multipart presigned direto do browser (dev). Expõe ETag.
+      MINIO_API_CORS_ALLOW_ORIGIN: "*"
     ports:
+      - "9000:9000"   # API S3 (usada pelo navegador nos uploads presigned)
       - "9001:9001"   # console web do MinIO
     volumes:
       - miniodata:/data

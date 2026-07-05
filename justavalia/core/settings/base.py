@@ -132,6 +132,10 @@ STORAGES = {
     },
 }
 
+# Endpoint público do S3/MinIO usado só para gerar URLs presigned (alcançável pelo
+# navegador). Em dev = http://localhost:9000; o backend usa AWS_S3_ENDPOINT_URL interno.
+AWS_S3_PUBLIC_ENDPOINT_URL = env("AWS_S3_PUBLIC_ENDPOINT_URL", default="")
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ---- Celery ----

@@ -15,6 +15,10 @@
     <span class="font-mono text-[11.5px] tracking-[1px] text-cobre">{{ pedido.status }}</span>
   </div>
 
+  {% if pedido.status == "AWAITING_UPLOAD" %}
+    <a href="{% url 'uploads:enviar' numero=pedido.numero %}" class="jv-btn mt-6 inline-block">Enviar fotos, vídeo e documentos</a>
+  {% endif %}
+
   <h2 class="font-titulo text-tinta text-[22px] font-medium mt-10">Linha do tempo</h2>
   <ol class="mt-4 border-l-2 border-tinta pl-6 flex flex-col gap-5">
     {% for t in timeline %}
