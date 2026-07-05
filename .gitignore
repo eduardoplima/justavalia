@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Identidade visual (descompactada em design/ na Fase 1; nao versionar o zip)
+*.zip

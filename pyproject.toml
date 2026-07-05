@@ -1,0 +1,50 @@
+[project]
+name = "justavalia"
+version = "0.0.0"
+description = "Justavalia — serviço de avaliação de imóveis 100% remoto (a IA elabora, o humano assina)."
+requires-python = ">=3.12"
+dependencies = [
+    "django~=5.2",
+    "psycopg[binary]~=3.2",
+    "celery~=5.4",
+    "redis~=5.2",
+    "django-environ~=0.11",
+    "django-storages~=1.14",
+    "boto3~=1.35",
+    "gunicorn~=23.0",
+    "whitenoise~=6.8",
+]
+
+# Grupos de fases futuras — DOCUMENTAIS, não instalados agora (ver CLAUDE.md/PROGRESSO).
+# Instalar por fase para manter a imagem enxuta e a Fase 0 rápida/verde.
+[project.optional-dependencies]
+pdf = ["weasyprint"]        # Fase 6 — render do PTAM (puxa cairo/pango/gdk-pixbuf)
+signing = ["pyhanko"]       # Fase 7 — assinatura PAdES (stack de cripto pesada)
+ai = ["anthropic"]          # Fase 5/6 — visão + rascunho do parecer
+obs = ["sentry-sdk", "flower"]  # Fase 9 — observabilidade
+
+[dependency-groups]
+dev = [
+    "ruff~=0.9",
+    "pytest~=8.3",
+    "pytest-django~=4.9",
+    "pytest-cov~=6.0",
+    "pre-commit~=4.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = ["*/migrations/*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "DJ"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "justavalia.core.settings.test"
+python_files = ["test_*.py"]
+testpaths = ["tests"]
+addopts = "-q --reuse-db"
+
+[tool.coverage.run]
+omit = ["*/migrations/*", "*/tests/*", "manage.py"]

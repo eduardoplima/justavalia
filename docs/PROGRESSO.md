@@ -1,0 +1,71 @@
+# Progresso — Justavalia
+
+Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas migra para
+`docs/ROADMAP.md`; este arquivo mantém o panorama e as decisões.
+
+## Panorama das fases
+
+| Fase | Descrição | Status |
+|---|---|---|
+| 0 | Fundação (skeleton, compose, CI, subagentes) | ✅ Em conclusão |
+| 1 | Identidade → tema Tailwind | ⬜ Pendente |
+| 2 | Site público | ⬜ Pendente |
+| 3 | Pedido + pagamento (mock) | ⬜ Pendente |
+| 4 | Upload resumível + protocolo guiado | ⬜ Pendente |
+| 5 | Pipeline de processamento | ⬜ Pendente |
+| 6 | Triagem + rascunho PTAM + PDF | ⬜ Pendente |
+| 7 | Dashboard de revisão + assinatura | ⬜ Pendente |
+| 8 | Entrega + notificações | ⬜ Pendente |
+| 9 | LGPD + hardening + deploy | ⬜ Pendente |
+
+## Fase 0 — checklist
+
+- [x] Repo Python + `pyproject.toml` (uv, PEP 621) + `uv.lock`
+- [x] Skeleton Django: pacote `justavalia/` com os 11 apps (core + 10)
+- [x] Settings split `base/dev/prod/test`
+- [x] Usuário customizado `core.User` + migração inicial
+- [x] Wiring do Celery (`celery -A justavalia`) + filas `media,docs,ia,notify`
+- [x] Endpoints de saúde `/healthz/` e `/readyz/`
+- [x] Docker Compose (web, worker, beat, redis, postgres, minio, createbuckets)
+- [x] Dockerfile único (ffmpeg baked) + entrypoint (migrate só no web)
+- [x] Makefile (`up`, `test`, `lint`, `worker`, `shell`, `seed`, `styleguide`, …)
+- [x] CI GitHub Actions (ruff + pytest + checagem de migrações)
+- [x] pre-commit (ruff, ruff-format, detect-private-key, large-files)
+- [x] `.env.example` completo
+- [x] 4 subagentes em `.claude/agents/`
+- [x] `docs/PROGRESSO.md`
+- [x] Aceite: `make up` sobe tudo; `make test` verde (**8 passed**) — validado 2026-07-05
+
+> Revisor de fim de fase: **APROVADO** (sem bloqueadores). Melhorias registradas p/ fases 1 e 9:
+> `*.zip` no `.gitignore` (feito), `SECRET_KEY` sem default em prod (F9), `STORAGES` prod com
+> `OPTIONS` (F9), `worker/beat` aguardarem migrações quando tocarem o ORM (F5).
+
+## Registro de decisões (Fase 0)
+
+- **Packaging: uv.** Binário único, resolves rápidos, `pyproject.toml` PEP 621, `uv.lock`
+  reprodutível, pin de Python 3.12 (`.python-version`). Host roda 3.14; tudo executa na
+  imagem 3.12.
+- **Settings split** `base/dev/prod/test`: fronteira de segurança dev↔prod; `test` com Celery
+  ansioso, hasher rápido, e-mail em memória.
+- **django-environ** para leitura tipada de env (`env.bool/list/db()`).
+- **Custom User já na Fase 0** (`core.User`) — evita o retrabalho de trocar `AUTH_USER_MODEL`
+  após a primeira migração.
+- **Auditoria adiada para a Fase 3**: o log imutável real é o de transições da máquina de
+  estados do `Pedido`; não criamos tabela ociosa agora.
+- **Deps de fases futuras adiadas** (WeasyPrint→F6, pyHanko→F7, anthropic→F5/6, sentry/flower
+  →F9) — declaradas em `[project.optional-dependencies]` mas não instaladas. **Exceção:** o
+  binário `ffmpeg` já entra na imagem (apt estável, evita rebuild na F5). `psycopg[binary]`
+  para dispensar compilador/libpq-dev na imagem dev (revisão para prod na F9).
+- **Migrações aplicadas só pelo serviço web** (via `RUN_MIGRATIONS=1` no entrypoint) — evita
+  corrida entre web/worker/beat.
+
+## Registro de ambiente / modelo do orquestrador
+
+O CLAUDE.md especifica **Claude Fable 5** como sessão principal (orquestrador). Fable 5 não
+está disponível neste plano; conforme instrução do próprio CLAUDE.md ("se indisponível no
+plano, usar o Opus mais recente e registrar em docs/PROGRESSO.md"), o orquestrador está
+rodando em **Claude Opus 4.8** (`claude-opus-4-8`, janela de contexto de 1M). Data do
+registro: 2026-07-05.
+
+Nota: isto é distinto de `ANTHROPIC_MODEL` (o modelo da API usado pelo pipeline de IA), que
+permanece um placeholder vazio até a Fase 5/6, a ser fixado consultando docs.claude.com.

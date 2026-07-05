@@ -1,0 +1,16 @@
+.git
+.github
+.claude
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+htmlcov
+.coverage
+.env
+docs
+design
+*.zip
+Identidade visual Justavalia.zip
