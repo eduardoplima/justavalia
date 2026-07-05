@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Source+Sans+3:wght@400..700&family=Spline+Sans+Mono:wght@400..600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #F6F3EC; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;background:#F6F3EC">
+  <dc-import name="Header" ativa="advogados" hint-size="100%,64px"></dc-import>
+
+  <section data-screen-label="Hero advogados" style="background:#16302B;position:relative;overflow:hidden">
+    <dc-import name="Selo" variante="monograma" cor="#22423A" cor2="#22423A" tamanho="440" hint-size="440px,440px" style="position:absolute;right:-110px;bottom:-160px;pointer-events:none"></dc-import>
+    <div style="max-width:1140px;margin:0 auto;padding:72px 20px 76px;position:relative;display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:'Spline Sans Mono',monospace;font-size:12.5px;letter-spacing:2.4px;color:#C98A4B">PARA ADVOGADOS, CARTÓRIOS E CONTADORES</span>
+      <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(32px,4.4vw,50px);line-height:1.14;color:#F6F3EC;max-width:26ch;text-wrap:pretty">A avaliação não precisa ser o gargalo do inventário.</h1>
+      <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:18px;line-height:1.6;color:#C4CDC6;max-width:62ch">Laudos de engenharia custam caro e demoram — e muitos casos não os exigem. Indique a Justavalia e receba um parecer técnico assinado, com prazo previsível, que destrava o processo do seu cliente.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <a href="https://wa.me/5500000000000" title="[substituir pelo número de WhatsApp]" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#F6F3EC;background:#B4611F;text-decoration:none;padding:15px 26px;border-radius:4px" style-hover="background:#94500F" style-focus="outline:2px solid #F6F3EC;outline-offset:2px">Fale com a gente</a>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Por que indicar" style="max-width:1140px;margin:0 auto;padding:72px 20px 8px">
+    <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">POR QUE INDICAR</span>
+    <h2 style="margin:12px 0 36px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);color:#16302B;max-width:26ch;text-wrap:pretty">Um documento que o seu processo pode esperar de pé.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px">
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:26px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="1"></rect><line x1="4" y1="10" x2="20" y2="10"></line><line x1="9" y1="3" x2="9" y2="7"></line><line x1="15" y1="3" x2="15" y2="7"></line></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Prazo previsível</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15.5px;line-height:1.55;color:#3C4742">Até 5 dias úteis a partir do material completo. Você consegue prometer uma data ao cliente.</p>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:26px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 19 C10 13 14 17 20 7"></path><line x1="4" y1="21" x2="20" y2="21"></line></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Responsabilidade profissional</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15.5px;line-height:1.55;color:#3C4742">Cada PTAM sai assinado por avaliador identificado, com CRECI e CNAI, via certificado ICP-Brasil.</p>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:26px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Verificável</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15.5px;line-height:1.55;color:#3C4742">Assinatura conferível no validador oficial do ITI. O cartório valida em minutos.</p>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:26px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="4" x2="12" y2="20"></line><path d="M16 7 H10 a3 3 0 0 0 0 6 h4 a3 3 0 0 1 0 6 H8"></path></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Custo proporcional</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15.5px;line-height:1.55;color:#3C4742">R$ 299 fixos para residencial urbano — sem orçamento, sem visita, sem surpresa no meio do inventário.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Reconhecimento e limites" style="max-width:1140px;margin:0 auto;padding:64px 20px 8px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px">
+      <div style="border:1.5px solid #16302B;background:#FDFCF8;padding:26px;display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#16302B">O QUE PODEMOS AFIRMAR</span>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#16302B">O PTAM é reconhecido pela Receita Federal como documento hábil para fundamentar valor de imóvel (IN RFB 2.091/2022) e é amplamente usado em inventários extrajudiciais, divórcios e planejamento patrimonial.</p>
+      </div>
+      <div style="border:1.5px solid #B4611F;background:#FDFCF8;padding:26px;display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">O QUE NÃO PROMETEMOS</span>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#16302B">Aceitação universal pelas SEFAZ estaduais para ITCMD — as regras variam por estado. Verifique a exigência local antes de protocolar; se o caso pedir outro documento, dizemos isso por escrito.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Parceria" style="max-width:820px;margin:0 auto;padding:72px 20px 88px">
+    <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">PARCERIA</span>
+    <h2 style="margin:12px 0 16px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.2vw,36px);color:#16302B">Como funciona a indicação</h2>
+    <p style="margin:0 0 24px;font-family:'Source Sans 3',sans-serif;font-size:16.5px;line-height:1.6;color:#3C4742;max-width:60ch">Você indica, nós conduzimos o cliente do primeiro contato à entrega — e mantemos você informado do andamento. [Modelo de indicação: placeholder para condições da parceria.]</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:36px">
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:16px 20px;display:flex;gap:14px;align-items:baseline">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:2px;color:#B4611F">01</span>
+        <span style="font-family:'Source Sans 3',sans-serif;font-size:16px;color:#16302B">Você apresenta a Justavalia ao cliente — enviamos material de apoio pronto para encaminhar.</span>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:16px 20px;display:flex;gap:14px;align-items:baseline">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:2px;color:#B4611F">02</span>
+        <span style="font-family:'Source Sans 3',sans-serif;font-size:16px;color:#16302B">O cliente pede a avaliação pelo WhatsApp e envia o material com nosso roteiro guiado.</span>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:16px 20px;display:flex;gap:14px;align-items:baseline">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:2px;color:#B4611F">03</span>
+        <span style="font-family:'Source Sans 3',sans-serif;font-size:16px;color:#16302B">Em até 5 dias úteis, o PTAM assinado chega — e o seu processo anda.</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+      <a href="https://wa.me/5500000000000" title="[substituir pelo número de WhatsApp]" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#F6F3EC;background:#B4611F;text-decoration:none;padding:15px 26px;border-radius:4px" style-hover="background:#94500F" style-focus="outline:2px solid #16302B;outline-offset:2px">Fale com a gente</a>
+      <span style="font-family:'Source Sans 3',sans-serif;font-size:15px;color:#5B655F">Pedimos o material de apoio no mesmo contato.</span>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,380px"></dc-import>
+  <dc-import name="Zap" hint-size="1px,1px"></dc-import>
+</div>
+</x-dc>
+</body>
+</html>

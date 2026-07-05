@@ -862,6 +862,7 @@ signing = [
 [package.dev-dependencies]
 dev = [
     { name = "pre-commit" },
+    { name = "pytailwindcss" },
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "pytest-django" },
@@ -890,6 +891,7 @@ provides-extras = ["pdf", "signing", "ai", "obs"]
 [package.metadata.requires-dev]
 dev = [
     { name = "pre-commit", specifier = "~=4.0" },
+    { name = "pytailwindcss", specifier = ">=0.3.1" },
     { name = "pytest", specifier = "~=8.3" },
     { name = "pytest-cov", specifier = "~=6.0" },
     { name = "pytest-django", specifier = "~=4.9" },
@@ -1372,6 +1374,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/69/56/e4d7e1bd70d997713649c5ce530b2d15a5fc2245a74ca820fc2d51d89d4d/pyphen-0.17.2.tar.gz", hash = "sha256:f60647a9c9b30ec6c59910097af82bc5dd2d36576b918e44148d8b07ef3b4aa3", size = 2079470, upload-time = "2025-01-20T13:18:36.296Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7b/1f/c2142d2edf833a90728e5cdeb10bdbdc094dde8dbac078cee0cf33f5e11b/pyphen-0.17.2-py3-none-any.whl", hash = "sha256:3a07fb017cb2341e1d9ff31b8634efb1ae4dc4b130468c7c39dd3d32e7c3affd", size = 2079358, upload-time = "2025-01-20T13:18:29.629Z" },
+]
+
+[[package]]
+name = "pytailwindcss"
+version = "0.3.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/27/8a/5ba4a60c6a2f235c9ad93a5e9f29d202ad9e8038e8ea293be31057085cee/pytailwindcss-0.3.1.tar.gz", hash = "sha256:e83c65985f078ff91500f74bca595f615e54059d5afc90b233382e118b509b4d", size = 18712, upload-time = "2026-06-12T13:43:01.804Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/95/9b/362cd1ae308a2fd8a9a58ff089cefd2e49976540765afa4e9a2c013876af/pytailwindcss-0.3.1-py3-none-any.whl", hash = "sha256:31583c5bb7fac66c6e6535992e51630e36788cf6e569f4d294e98962fa034535", size = 7496, upload-time = "2026-06-12T13:43:00.675Z" },
 ]
 
 [[package]]

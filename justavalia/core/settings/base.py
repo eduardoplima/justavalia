@@ -28,6 +28,10 @@ DEBUG = env("DJANGO_DEBUG")
 ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS")
 CSRF_TRUSTED_ORIGINS = env("DJANGO_CSRF_TRUSTED_ORIGINS")
 
+# Página interna de conferência dos tokens/componentes visuais (Fase 1). Ligada por
+# padrão em dev, desligada em produção — nunca expor fora de DEBUG sem querer.
+SHOW_STYLEGUIDE = env.bool("SHOW_STYLEGUIDE", default=DEBUG)
+
 # ---- Apps ----
 DJANGO_APPS = [
     "django.contrib.admin",
@@ -106,7 +110,7 @@ USE_TZ = True
 # ---- Static / media ----
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [d for d in [BASE_DIR / "static"] if d.exists()]
+STATICFILES_DIRS = [BASE_DIR / "justavalia" / "static"]
 
 # Armazenamento S3-compatível (MinIO em dev) via django-storages.
 STORAGES = {

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ isCircular }}" hint-placeholder-val="{{ true }}">
+  <svg width="{{ px }}" height="{{ px }}" viewBox="0 0 120 120" role="img" aria-label="Selo Justavalia" style="display:block">
+    <circle cx="60" cy="60" r="57" fill="none" stroke="{{ cor }}" stroke-width="2.5"></circle>
+    <circle cx="60" cy="60" r="42" fill="none" stroke="{{ cor }}" stroke-width="1"></circle>
+    <path id="seloArco" d="M 60,60 m -49.5,0 a 49.5,49.5 0 1,1 99,0 a 49.5,49.5 0 1,1 -99,0" fill="none"></path>
+    <text style="font-family:'Spline Sans Mono',monospace;font-size:8.6px;letter-spacing:2.2px;font-weight:500" fill="{{ cor }}">
+      <textPath href="#seloArco" startOffset="0">JUSTAVALIA · PARECER TÉCNICO · JUSTAVALIA · PARECER TÉCNICO ·</textPath>
+    </text>
+    <path d="M32,72 C42,52 50,84 60,62 C66,49 72,68 88,54" fill="none" stroke="{{ cor }}" stroke-width="2.4" stroke-linecap="round"></path>
+    <line x1="38" y1="80" x2="82" y2="80" stroke="{{ cor }}" stroke-width="1"></line>
+  </svg>
+</sc-if>
+<sc-if value="{{ isCarimbo }}" hint-placeholder-val="{{ false }}">
+  <svg width="{{ pxLargo }}" height="{{ px }}" viewBox="0 0 200 120" role="img" aria-label="Carimbo Justavalia" style="display:block">
+    <rect x="6" y="14" width="188" height="92" fill="none" stroke="{{ cor }}" stroke-width="3"></rect>
+    <rect x="14" y="22" width="172" height="76" fill="none" stroke="{{ cor }}" stroke-width="1"></rect>
+    <text x="100" y="54" text-anchor="middle" fill="{{ cor }}" style="font-family:'Newsreader',serif;font-size:24px;font-weight:600;letter-spacing:1px">JUSTAVALIA</text>
+    <line x1="28" y1="64" x2="172" y2="64" stroke="{{ cor }}" stroke-width="1"></line>
+    <text x="100" y="80" text-anchor="middle" fill="{{ cor }}" style="font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:2.4px">PARECER ASSINADO</text>
+    <text x="100" y="93" text-anchor="middle" fill="{{ cor }}" style="font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:2.4px">EM ____/____/______</text>
+  </svg>
+</sc-if>
+
+<sc-if value="{{ isMonograma }}" hint-placeholder-val="{{ false }}">
+  <svg width="{{ px }}" height="{{ px }}" viewBox="0 0 64 64" role="img" aria-label="Monograma Justavalia" style="display:block">
+    <rect x="3" y="3" width="58" height="58" fill="none" stroke="{{ cor }}" stroke-width="2.5"></rect>
+    <rect x="9" y="9" width="46" height="46" fill="none" stroke="{{ cor }}" stroke-width="1"></rect>
+    <text x="32" y="41" text-anchor="middle" fill="{{ cor }}" style="font-family:'Newsreader',serif;font-size:32px;font-weight:600">J</text>
+    <line x1="18" y1="48" x2="46" y2="48" stroke="{{ cor2 }}" stroke-width="2" stroke-linecap="round"></line>
+  </svg>
+</sc-if></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:240,&quot;height&quot;:180},&quot;variante&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;monograma&quot;,&quot;circular&quot;,&quot;carimbo&quot;],&quot;default&quot;:&quot;monograma&quot;,&quot;tsType&quot;:&quot;'monograma'|'circular'|'carimbo'&quot;},&quot;cor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#16302B&quot;,&quot;#B4611F&quot;,&quot;#F6F3EC&quot;,&quot;#C98A4B&quot;],&quot;default&quot;:&quot;#16302B&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;cor2&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#B4611F&quot;,&quot;#C98A4B&quot;,&quot;#16302B&quot;],&quot;default&quot;:&quot;#B4611F&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tamanho&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:120,&quot;min&quot;:12,&quot;max&quot;:520,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const v = this.props.variante ?? 'circular';
+    const t = Number(this.props.tamanho ?? 120);
+    return {
+      isCircular: v === 'circular',
+      isCarimbo: v === 'carimbo',
+      isMonograma: v === 'monograma',
+      cor: this.props.cor ?? '#16302B',
+      cor2: this.props.cor2 ?? '#B4611F',
+      px: t + 'px',
+      pxLargo: Math.round(t * 200 / 120) + 'px'
+    };
+  }
+}
+</script>
+</body>
+</html>

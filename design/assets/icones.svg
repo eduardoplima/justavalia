@@ -1,0 +1,21 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="jv-icon-documento" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+    <rect x="6" y="4" width="13" height="17" rx="1"></rect><path d="M4 7v14h11"></path><line x1="9.5" y1="9" x2="15.5" y2="9"></line><line x1="9.5" y1="12.5" x2="15.5" y2="12.5"></line>
+  </symbol>
+  <symbol id="jv-icon-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="7" width="13" height="11" rx="1"></rect><path d="M16 11l5-3v9l-5-3"></path>
+  </symbol>
+  <symbol id="jv-icon-assinatura" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+    <path d="M5 19 C10 13 14 17 20 7"></path><line x1="4" y1="21" x2="20" y2="21"></line>
+  </symbol>
+  <symbol id="jv-icon-prazo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+    <rect x="4" y="5" width="16" height="16" rx="1"></rect><line x1="4" y1="10" x2="20" y2="10"></line><line x1="9" y1="3" x2="9" y2="7"></line><line x1="15" y1="3" x2="15" y2="7"></line>
+  </symbol>
+  <symbol id="jv-icon-verificacao" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="8"></circle><path d="M8.5 12l2.5 2.5 4.5-5"></path>
+  </symbol>
+  <symbol id="jv-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12l5 5 11-11"></path>
+  </symbol>
+</svg>

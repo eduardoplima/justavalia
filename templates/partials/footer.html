@@ -1,0 +1,37 @@
+{% load static %}
+<footer class="bg-tinta text-texto-escuro-suave font-texto">
+  <div class="jv-container grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-9 pt-14 pb-8">
+    <div class="flex flex-col gap-3.5">
+      <div class="flex items-center gap-2.5">
+        <img src="{% static 'img/logo-simbolo-monograma-claro.svg' %}" alt="" aria-hidden="true" class="h-11 w-11">
+        <span class="font-titulo text-[22px] font-semibold text-papel">Justavalia</span>
+      </div>
+      <p class="m-0 text-[14.5px] leading-[1.55] max-w-[30ch]">Pareceres técnicos de avaliação mercadológica (PTAM), assinados por avaliador credenciado. 100% online.</p>
+      <p class="m-0 font-mono text-xs tracking-[1px] text-texto-escuro-legenda">CRECI [nº] · CNAI [nº]</p>
+    </div>
+
+    <nav aria-label="Rodapé" class="flex flex-col gap-2.5 text-[15px]">
+      <span class="font-mono text-[11.5px] tracking-[2px] text-texto-escuro-legenda">PÁGINAS</span>
+      <a href="#" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">Início</a>
+      <a href="#" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">Como funciona</a>
+      <a href="#" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">Para advogados e escritórios</a>
+      <a href="#" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">Quem assina</a>
+      <a href="#" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">Perguntas frequentes</a>
+    </nav>
+
+    <div class="flex flex-col gap-2.5 text-[15px]">
+      <span class="font-mono text-[11.5px] tracking-[2px] text-texto-escuro-legenda">CONTATO E LEGAL</span>
+      <a href="https://wa.me/55[NUMERO]" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">WhatsApp [número]</a>
+      <a href="mailto:[e-mail]" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">[e-mail]</a>
+      <a href="#" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">Política de privacidade</a>
+      <a href="#" class="text-texto-escuro-suave no-underline hover:text-papel hover:underline focus-visible:outline-2 focus-visible:outline-papel">Termos</a>
+    </div>
+  </div>
+
+  <div class="border-t border-tinta-border">
+    <div class="jv-container flex flex-wrap gap-x-6 gap-y-2 justify-between py-4 font-mono text-[11.5px] tracking-[1px] text-texto-escuro-legenda">
+      <span>JUSTAVALIA · CNPJ [preencher]</span>
+      <span>PARECERES VERIFICÁVEIS NO VALIDADOR OFICIAL DO ITI</span>
+    </div>
+  </div>
+</footer>

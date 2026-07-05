@@ -27,6 +27,11 @@ RUN uv sync --frozen --no-install-project
 COPY . .
 RUN uv sync --frozen
 
+# CSS da identidade (Tailwind v4 standalone via pytailwindcss — sem Node).
+# Em dev o bind-mount sobrepõe; rode `make css` no host ao mudar templates.
+RUN uv run tailwindcss -i justavalia/static/src/input.css \
+    -o justavalia/static/css/app.css --minify
+
 # Usuário não-root; dono do código e do venv.
 RUN useradd --create-home --uid 1000 app \
     && chown -R app:app /app /opt/venv

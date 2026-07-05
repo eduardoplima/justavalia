@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Source+Sans+3:wght@400..700&family=Spline+Sans+Mono:wght@400..600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #F6F3EC; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;background:#F6F3EC">
+  <dc-import name="Header" ativa="" hint-size="100%,64px"></dc-import>
+
+  <!-- HERO -->
+  <sc-if value="{{ heroPapel }}" hint-placeholder-val="{{ true }}">
+    <section data-screen-label="Hero" style="background:#F6F3EC">
+      <div style="max-width:1140px;margin:0 auto;padding:64px 20px 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:22px;max-width:56ch">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12.5px;letter-spacing:2.4px;color:#B4611F">PTAM · PARECER TÉCNICO DE AVALIAÇÃO MERCADOLÓGICA</span>
+          <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(34px,4.6vw,54px);line-height:1.12;color:#16302B;text-wrap:pretty">Seu imóvel avaliado por um profissional credenciado. 100% online, em 5 dias úteis.</h1>
+          <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:18.5px;line-height:1.55;color:#3C4742">Você recebe um PTAM em PDF — o parecer técnico de avaliação mercadológica — revisado e assinado digitalmente por avaliador com CRECI e CNAI.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+            <a href="https://wa.me/5500000000000" title="[substituir pelo número de WhatsApp]" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#F6F3EC;background:#B4611F;text-decoration:none;padding:15px 26px;border-radius:4px" style-hover="background:#94500F" style-focus="outline:2px solid #16302B;outline-offset:2px">Pedir minha avaliação</a>
+            <a href="Como-funciona.dc.html" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#16302B;text-decoration:none;padding:15px 20px;border:1.5px solid #16302B;border-radius:4px" style-hover="background:#ECE7DA" style-focus="outline:2px solid #B4611F;outline-offset:2px">Como funciona</a>
+          </div>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12.5px;letter-spacing:1.4px;color:#5B655F">R$ 299 · PREÇO FIXO · IMÓVEL RESIDENCIAL URBANO</span>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <div style="position:relative;width:min(350px,86vw)">
+            <div style="background:#FDFCF8;border:1px solid #E4DECF;box-shadow:0 18px 44px rgba(22,48,43,0.16);aspect-ratio:1/1.38;padding:24px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                <span style="font-family:'Newsreader',serif;font-size:16px;font-weight:600;color:#16302B">Justavalia</span>
+                <span style="font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:1px;color:#8A8371">PTAM Nº 2026-0147</span>
+              </div>
+              <div style="height:1px;background:#E4DECF"></div>
+              <span style="font-family:'Spline Sans Mono',monospace;font-size:9.5px;letter-spacing:1.8px;color:#16302B;line-height:1.6">PARECER TÉCNICO DE AVALIAÇÃO MERCADOLÓGICA</span>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:92%"></div>
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:78%"></div>
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:86%"></div>
+              </div>
+              <div style="flex:1;min-height:64px;background:repeating-linear-gradient(45deg,#EFEADC,#EFEADC 8px,#E7E1D2 8px,#E7E1D2 16px);display:flex;align-items:center;justify-content:center">
+                <span style="font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:1.4px;color:#7A7361">REGISTRO FOTOGRÁFICO</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:84%"></div>
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:65%"></div>
+              </div>
+              <div style="margin-top:auto;display:flex;flex-direction:column;gap:5px;border-top:1px solid #E4DECF;padding-top:10px">
+                <svg width="120" height="26" viewBox="0 0 120 26" aria-hidden="true"><path d="M6,18 C22,4 30,24 46,10 C56,2 66,18 92,8" fill="none" stroke="#B4611F" stroke-width="2" stroke-linecap="round"></path></svg>
+                <span style="font-family:'Spline Sans Mono',monospace;font-size:8.5px;letter-spacing:1px;color:#5B655F">[NOME DO AVALIADOR] · CRECI [nº] · CNAI [nº]</span>
+                <span style="font-family:'Spline Sans Mono',monospace;font-size:8.5px;letter-spacing:1px;color:#B4611F">ASSINADO DIGITALMENTE · ICP-BRASIL</span>
+              </div>
+            </div>
+            <dc-import name="Selo" variante="{{ seloVar }}" cor="#B4611F" tamanho="92" hint-size="92px,92px" style="position:absolute;top:-20px;right:-18px;transform:rotate(-9deg);opacity:0.92"></dc-import>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{ heroTinta }}" hint-placeholder-val="{{ false }}">
+    <section data-screen-label="Hero" style="background:#16302B;position:relative;overflow:hidden">
+      <dc-import name="Selo" variante="monograma" cor="#22423A" cor2="#22423A" tamanho="520" hint-size="520px,520px" style="position:absolute;right:-120px;top:-90px;pointer-events:none"></dc-import>
+      <div style="max-width:1140px;margin:0 auto;padding:72px 20px 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;position:relative">
+        <div style="display:flex;flex-direction:column;gap:22px;max-width:56ch">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12.5px;letter-spacing:2.4px;color:#C98A4B">PTAM · PARECER TÉCNICO DE AVALIAÇÃO MERCADOLÓGICA</span>
+          <h1 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(34px,4.6vw,54px);line-height:1.12;color:#F6F3EC;text-wrap:pretty">Seu imóvel avaliado por um profissional credenciado. 100% online, em 5 dias úteis.</h1>
+          <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:18.5px;line-height:1.55;color:#C4CDC6">Você recebe um PTAM em PDF — o parecer técnico de avaliação mercadológica — revisado e assinado digitalmente por avaliador com CRECI e CNAI.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+            <a href="https://wa.me/5500000000000" title="[substituir pelo número de WhatsApp]" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#F6F3EC;background:#B4611F;text-decoration:none;padding:15px 26px;border-radius:4px" style-hover="background:#94500F" style-focus="outline:2px solid #F6F3EC;outline-offset:2px">Pedir minha avaliação</a>
+            <a href="Como-funciona.dc.html" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#F6F3EC;text-decoration:none;padding:15px 20px;border:1.5px solid #4A6157;border-radius:4px" style-hover="border-color:#F6F3EC" style-focus="outline:2px solid #C98A4B;outline-offset:2px">Como funciona</a>
+          </div>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12.5px;letter-spacing:1.4px;color:#8FA098">R$ 299 · PREÇO FIXO · IMÓVEL RESIDENCIAL URBANO</span>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <div style="position:relative;width:min(350px,86vw)">
+            <div style="background:#FDFCF8;border:1px solid #E4DECF;box-shadow:0 22px 54px rgba(0,0,0,0.35);aspect-ratio:1/1.38;padding:24px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                <span style="font-family:'Newsreader',serif;font-size:16px;font-weight:600;color:#16302B">Justavalia</span>
+                <span style="font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:1px;color:#8A8371">PTAM Nº 2026-0147</span>
+              </div>
+              <div style="height:1px;background:#E4DECF"></div>
+              <span style="font-family:'Spline Sans Mono',monospace;font-size:9.5px;letter-spacing:1.8px;color:#16302B;line-height:1.6">PARECER TÉCNICO DE AVALIAÇÃO MERCADOLÓGICA</span>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:92%"></div>
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:78%"></div>
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:86%"></div>
+              </div>
+              <div style="flex:1;min-height:64px;background:repeating-linear-gradient(45deg,#EFEADC,#EFEADC 8px,#E7E1D2 8px,#E7E1D2 16px);display:flex;align-items:center;justify-content:center">
+                <span style="font-family:'Spline Sans Mono',monospace;font-size:9px;letter-spacing:1.4px;color:#7A7361">REGISTRO FOTOGRÁFICO</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:7px">
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:84%"></div>
+                <div style="height:7px;background:#E7E1D2;border-radius:2px;width:65%"></div>
+              </div>
+              <div style="margin-top:auto;display:flex;flex-direction:column;gap:5px;border-top:1px solid #E4DECF;padding-top:10px">
+                <svg width="120" height="26" viewBox="0 0 120 26" aria-hidden="true"><path d="M6,18 C22,4 30,24 46,10 C56,2 66,18 92,8" fill="none" stroke="#B4611F" stroke-width="2" stroke-linecap="round"></path></svg>
+                <span style="font-family:'Spline Sans Mono',monospace;font-size:8.5px;letter-spacing:1px;color:#5B655F">[NOME DO AVALIADOR] · CRECI [nº] · CNAI [nº]</span>
+                <span style="font-family:'Spline Sans Mono',monospace;font-size:8.5px;letter-spacing:1px;color:#B4611F">ASSINADO DIGITALMENTE · ICP-BRASIL</span>
+              </div>
+            </div>
+            <dc-import name="Selo" variante="{{ seloVar }}" cor="#B4611F" tamanho="92" hint-size="92px,92px" style="position:absolute;top:-20px;right:-18px;transform:rotate(-9deg);opacity:0.95"></dc-import>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- BARRA DE CONFIANÇA -->
+  <section data-screen-label="Barra de confiança" style="background:{{ trustBg }};border-top:1px solid #2A473F;border-bottom:1px solid #2A473F">
+    <div style="max-width:1140px;margin:0 auto;padding:18px 20px;display:flex;flex-wrap:wrap;gap:10px 36px;justify-content:center;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:1.6px;color:#C4CDC6">
+      <span>CRECI [nº]</span>
+      <span style="color:#4A6157">·</span>
+      <span>CNAI [nº]</span>
+      <span style="color:#4A6157">·</span>
+      <span>ASSINATURA DIGITAL ICP-BRASIL</span>
+      <span style="color:#4A6157">·</span>
+      <span>VERIFICÁVEL NO VALIDADOR OFICIAL DO ITI</span>
+    </div>
+  </section>
+
+  <!-- PARA QUE SERVE -->
+  <section data-screen-label="Para que serve" style="max-width:1140px;margin:0 auto;padding:72px 20px 8px">
+    <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">PARA QUE SERVE</span>
+    <h2 style="margin:12px 0 36px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);color:#16302B;max-width:26ch;text-wrap:pretty">Uma referência técnica de valor, quando o processo exige — ou a negociação pede.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px">
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="6" y="4" width="13" height="17" rx="1"></rect><path d="M4 7v14h11"></path><line x1="9.5" y1="9" x2="15.5" y2="9"></line><line x1="9.5" y1="12.5" x2="15.5" y2="12.5"></line></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Inventário e partilha</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Valor de referência para inventário extrajudicial e divisão de bens entre herdeiros.</p>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="5"></circle><circle cx="15" cy="12" r="5"></circle></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Divórcio</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Base neutra e assinada para a partilha do imóvel do casal.</p>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="19" x2="19" y2="5"></line><circle cx="7.5" cy="7.5" r="2.5"></circle><circle cx="16.5" cy="16.5" r="2.5"></circle></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">ITCMD e planejamento patrimonial</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Fundamento técnico de valor para doações, holding familiar e sucessão.</p>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13l-3-3"></path><path d="M20 15H7l3 3"></path></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Compra, venda e negociação</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Um número técnico na mesa — para pedir, oferecer ou contrapor com segurança.</p>
+      </div>
+      <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:24px;display:flex;flex-direction:column;gap:12px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="1"></rect><path d="M4 8l2-4h12l2 4"></path><line x1="10" y1="12" x2="14" y2="12"></line></svg>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Atualização de patrimônio</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Valor de mercado atual documentado, para registros e decisões da família.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section data-screen-label="Como funciona (resumo)" style="max-width:1140px;margin:0 auto;padding:72px 20px 8px">
+    <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">COMO FUNCIONA</span>
+    <h2 style="margin:12px 0 36px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);color:#16302B;max-width:24ch;text-wrap:pretty">Quatro passos, tudo pela internet.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+      <div style="border-top:2px solid #16302B;padding:20px 4px 0;display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:2px;color:#B4611F">01</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Você envia</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Documentos, fotos e vídeo do imóvel, seguindo nosso roteiro guiado.</p>
+      </div>
+      <div style="border-top:2px solid #16302B;padding:20px 4px 0;display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:2px;color:#B4611F">02</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Analisamos o mercado</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Comparativos e dados de mercado, com apoio de tecnologia.</p>
+      </div>
+      <div style="border-top:2px solid #16302B;padding:20px 4px 0;display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:2px;color:#B4611F">03</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Um avaliador assina</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">Avaliador credenciado (CRECI e CNAI) revisa cada parecer e assina pessoalmente.</p>
+      </div>
+      <div style="border-top:2px solid #16302B;padding:20px 4px 0;display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:2px;color:#B4611F">04</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:#16302B">Você recebe o PDF</h3>
+        <p style="margin:0;font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.55;color:#3C4742">PTAM assinado digitalmente, em até 5 dias úteis.</p>
+      </div>
+    </div>
+    <div style="margin-top:28px"><a href="Como-funciona.dc.html" style="font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:600;color:#B4611F;text-decoration:underline;text-underline-offset:3px" style-focus="outline:2px solid #B4611F;outline-offset:2px">Ver o processo completo, com checklist de documentos →</a></div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section data-screen-label="O que você recebe" style="max-width:1140px;margin:0 auto;padding:72px 20px 8px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:start">
+      <div>
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">O QUE VOCÊ RECEBE</span>
+        <h2 style="margin:12px 0 24px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);color:#16302B;text-wrap:pretty">A anatomia do PTAM</h2>
+        <p style="margin:0 0 8px;font-family:'Source Sans 3',sans-serif;font-size:16.5px;line-height:1.6;color:#3C4742;max-width:52ch">Um documento completo, estruturado para ser lido — por você, pelo advogado, pelo cartório.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:16px 20px;display:flex;gap:14px;align-items:baseline">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:1px;color:#B4611F">§1</span>
+          <div><strong style="font-family:'Source Sans 3',sans-serif;font-size:16px;color:#16302B">Identificação do imóvel</strong><span style="font-family:'Source Sans 3',sans-serif;font-size:15px;color:#5B655F"> — matrícula, endereço, características.</span></div>
+        </div>
+        <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:16px 20px;display:flex;gap:14px;align-items:baseline">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:1px;color:#B4611F">§2</span>
+          <div><strong style="font-family:'Source Sans 3',sans-serif;font-size:16px;color:#16302B">Metodologia e comparativos</strong><span style="font-family:'Source Sans 3',sans-serif;font-size:15px;color:#5B655F"> — como se chegou ao valor, com dados de mercado.</span></div>
+        </div>
+        <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:16px 20px;display:flex;gap:14px;align-items:baseline">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:1px;color:#B4611F">§3</span>
+          <div><strong style="font-family:'Source Sans 3',sans-serif;font-size:16px;color:#16302B">Registro fotográfico</strong><span style="font-family:'Source Sans 3',sans-serif;font-size:15px;color:#5B655F"> — as imagens que você enviou, organizadas e datadas.</span></div>
+        </div>
+        <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:16px 20px;display:flex;gap:14px;align-items:baseline">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:1px;color:#B4611F">§4</span>
+          <div><strong style="font-family:'Source Sans 3',sans-serif;font-size:16px;color:#16302B">Pressupostos e ressalvas</strong><span style="font-family:'Source Sans 3',sans-serif;font-size:15px;color:#5B655F"> — o que o parecer cobre e o que não cobre, por escrito.</span></div>
+        </div>
+        <div style="background:#FDFCF8;border:1px solid #E4DECF;padding:16px 20px;display:flex;gap:14px;align-items:baseline">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:1px;color:#B4611F">§5</span>
+          <div><strong style="font-family:'Source Sans 3',sans-serif;font-size:16px;color:#16302B">Assinatura digital verificável</strong><span style="font-family:'Source Sans 3',sans-serif;font-size:15px;color:#5B655F"> — ICP-Brasil, conferível no validador oficial do ITI.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARÊNCIA DE ESCOPO -->
+  <section data-screen-label="Escopo" style="max-width:1140px;margin:0 auto;padding:72px 20px 8px">
+    <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">TRANSPARÊNCIA DE ESCOPO</span>
+    <h2 style="margin:12px 0 12px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);color:#16302B;max-width:26ch;text-wrap:pretty">Para que o PTAM serve — dito com clareza.</h2>
+    <p style="margin:0 0 32px;font-family:'Source Sans 3',sans-serif;font-size:16.5px;line-height:1.6;color:#3C4742;max-width:60ch">Se o seu caso pedir outro tipo de documento, dizemos antes de você pagar.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px">
+      <div style="border:1.5px solid #16302B;background:#FDFCF8">
+        <div style="background:#16302B;color:#F6F3EC;padding:12px 20px;font-family:'Spline Sans Mono',monospace;font-size:12.5px;letter-spacing:2.4px">SERVE PARA</div>
+        <ul style="margin:0;padding:20px 20px 22px;list-style:none;display:flex;flex-direction:column;gap:12px;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.5;color:#16302B">
+          <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><path d="M4 12l5 5 11-11"></path></svg>Inventário extrajudicial e partilha</li>
+          <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><path d="M4 12l5 5 11-11"></path></svg>Divórcio e divisão de bens</li>
+          <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><path d="M4 12l5 5 11-11"></path></svg>ITCMD e planejamento patrimonial</li>
+          <li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16302B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:3px" aria-hidden="true"><path d="M4 12l5 5 11-11"></path></svg>Referência para compra, venda e negociação</li>
+        </ul>
+        <p style="margin:0;padding:0 20px 20px;font-family:'Source Sans 3',sans-serif;font-size:14.5px;line-height:1.55;color:#5B655F">Não cobre financiamento bancário, perícia judicial nem laudo de engenharia com ART. <a href="FAQ.dc.html" style="color:#B4611F;font-weight:600" style-focus="outline:2px solid #B4611F;outline-offset:2px">Entenda por quê</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREÇO -->
+  <section data-screen-label="Preço" style="background:#16302B;margin-top:72px">
+    <div style="max-width:1140px;margin:0 auto;padding:64px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#C98A4B">PREÇO FIXO · SEM SURPRESA</span>
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+          <span style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(56px,7vw,84px);color:#F6F3EC;line-height:1">R$ 299</span>
+          <span style="font-family:'Source Sans 3',sans-serif;font-size:17px;color:#C4CDC6">imóvel residencial urbano</span>
+        </div>
+        <p style="margin:10px 0 0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.55;color:#C4CDC6;max-width:52ch">Comercial, rural e imóveis de alto valor: sob consulta pelo WhatsApp.</p>
+      </div>
+      <div style="display:flex;justify-content:flex-start;flex-wrap:wrap;gap:14px">
+        <a href="https://wa.me/5500000000000" title="[substituir pelo número de WhatsApp]" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#F6F3EC;background:#B4611F;text-decoration:none;padding:15px 26px;border-radius:4px" style-hover="background:#94500F" style-focus="outline:2px solid #F6F3EC;outline-offset:2px">Pedir minha avaliação</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ CURTO -->
+  <section data-screen-label="FAQ curto" style="max-width:820px;margin:0 auto;padding:72px 20px 8px">
+    <span style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:2.4px;color:#B4611F">PERGUNTAS FREQUENTES</span>
+    <h2 style="margin:12px 0 28px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,40px);color:#16302B">O que mais perguntam</h2>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <details style="background:#FDFCF8;border:1px solid #E4DECF;padding:18px 22px">
+        <summary style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#16302B;cursor:pointer">O que é um PTAM e quem pode emitir?</summary>
+        <p style="margin:12px 0 0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#3C4742">É o Parecer Técnico de Avaliação Mercadológica: um documento que fundamenta o valor de mercado de um imóvel. Pode ser emitido por corretor de imóveis com CRECI ativo e inscrição no CNAI, o Cadastro Nacional de Avaliadores Imobiliários.</p>
+      </details>
+      <details style="background:#FDFCF8;border:1px solid #E4DECF;padding:18px 22px">
+        <summary style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#16302B;cursor:pointer">A vistoria por vídeo vale?</summary>
+        <p style="margin:12px 0 0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#3C4742">A norma do COFECI exige que a vistoria tenha data — e ela consta no parecer. A modalidade remota é declarada abertamente no documento, sem disfarce.</p>
+      </details>
+      <details style="background:#FDFCF8;border:1px solid #E4DECF;padding:18px 22px">
+        <summary style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#16302B;cursor:pointer">Serve para financiamento bancário?</summary>
+        <p style="margin:12px 0 0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#3C4742">Não. Bancos exigem laudo próprio, feito por avaliador credenciado pela instituição. O PTAM serve para inventário, divórcio, ITCMD, planejamento patrimonial e negociação.</p>
+      </details>
+      <details style="background:#FDFCF8;border:1px solid #E4DECF;padding:18px 22px">
+        <summary style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#16302B;cursor:pointer">Quanto tempo demora?</summary>
+        <p style="margin:12px 0 0;font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.6;color:#3C4742">Até 5 dias úteis a partir do recebimento completo de documentos, fotos e vídeo.</p>
+      </details>
+    </div>
+    <div style="margin-top:24px"><a href="FAQ.dc.html" style="font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:600;color:#B4611F;text-decoration:underline;text-underline-offset:3px" style-focus="outline:2px solid #B4611F;outline-offset:2px">Ver todas as perguntas →</a></div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section data-screen-label="CTA final" style="max-width:1140px;margin:0 auto;padding:80px 20px 88px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px">
+    <dc-import name="Selo" variante="monograma" cor="#B4611F" tamanho="72" hint-size="72px,72px"></dc-import>
+    <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(30px,3.8vw,44px);color:#16302B;max-width:24ch;text-wrap:pretty">Comece pelo WhatsApp. Em até 5 dias úteis, o parecer está assinado.</h2>
+    <a href="https://wa.me/5500000000000" title="[substituir pelo número de WhatsApp]" style="font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;color:#F6F3EC;background:#B4611F;text-decoration:none;padding:16px 30px;border-radius:4px" style-hover="background:#94500F" style-focus="outline:2px solid #16302B;outline-offset:2px">Pedir minha avaliação</a>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,380px"></dc-import>
+  <dc-import name="Zap" hint-size="1px,1px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroVariante&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;papel&quot;,&quot;tinta&quot;],&quot;default&quot;:&quot;papel&quot;,&quot;tsType&quot;:&quot;'papel'|'tinta'&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;seloVariante&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;monograma&quot;,&quot;circular&quot;,&quot;carimbo&quot;],&quot;default&quot;:&quot;monograma&quot;,&quot;tsType&quot;:&quot;'monograma'|'circular'|'carimbo'&quot;,&quot;section&quot;:&quot;Marca&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const hero = this.props.heroVariante ?? 'papel';
+    return {
+      heroPapel: hero === 'papel',
+      heroTinta: hero === 'tinta',
+      seloVar: this.props.seloVariante ?? 'monograma',
+      trustBg: hero === 'tinta' ? '#122822' : '#16302B'
+    };
+  }
+}
+</script>
+</body>
+</html>

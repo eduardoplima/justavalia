@@ -30,6 +30,7 @@ dev = [
     "pytest-django~=4.9",
     "pytest-cov~=6.0",
     "pre-commit~=4.0",
+    "pytailwindcss>=0.3.1",
 ]
 
 [tool.ruff]

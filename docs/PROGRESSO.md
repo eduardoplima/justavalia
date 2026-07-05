@@ -7,8 +7,8 @@ Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas m
 
 | Fase | Descrição | Status |
 |---|---|---|
-| 0 | Fundação (skeleton, compose, CI, subagentes) | ✅ Em conclusão |
-| 1 | Identidade → tema Tailwind | ⬜ Pendente |
+| 0 | Fundação (skeleton, compose, CI, subagentes) | ✅ Concluída |
+| 1 | Identidade → tema Tailwind | ✅ Concluída |
 | 2 | Site público | ⬜ Pendente |
 | 3 | Pedido + pagamento (mock) | ⬜ Pendente |
 | 4 | Upload resumível + protocolo guiado | ⬜ Pendente |
@@ -39,6 +39,29 @@ Documento vivo, atualizado ao fim de cada fase. O detalhe de fases concluídas m
 > Revisor de fim de fase: **APROVADO** (sem bloqueadores). Melhorias registradas p/ fases 1 e 9:
 > `*.zip` no `.gitignore` (feito), `SECRET_KEY` sem default em prod (F9), `STORAGES` prod com
 > `OPTIONS` (F9), `worker/beat` aguardarem migrações quando tocarem o ORM (F5).
+
+## Fase 1 — checklist
+
+- [x] `design/` descompactado e inventariado; assets de marca em `justavalia/static/img/`
+- [x] `design/tokens.md` extraído (cores, tipografia, espaçamento, componentes)
+- [x] Tema Tailwind v4 a partir dos tokens (`justavalia/static/src/input.css`, `@theme` + componentes)
+- [x] `templates/` base + partials (header sticky, footer tinta, FAB WhatsApp) com HTMX/Alpine
+- [x] Styleguide interno `/styleguide/` (gated por `SHOW_STYLEGUIDE=default DEBUG`) renderizando
+      todos os tokens e componentes — **validado em navegador (Playwright)**
+- [x] Alvos `make css`/`css-watch`/`styleguide`; build de css no Dockerfile
+- [x] Teste `tests/test_styleguide.py` (200 ligado / 404 desligado) — suíte: **10 passed**
+
+### Decisões (Fase 1)
+
+- **Toolchain de CSS: Tailwind v4 standalone via `pytailwindcss`** (dev dep, gerenciado pelo uv,
+  **sem Node**) — atende ao guardrail "sem SPA build". `app.css` é build-artifact (gitignore +
+  build no Dockerfile + `make css` no host, bind-mounted em dev).
+- Tokens `--jv-*` mapeados para o `@theme` do Tailwind → utilidades da marca (`bg-tinta`,
+  `text-cobre`, `p-section`, `max-w-largo`…) e componentes `.jv-*`.
+- Breakpoint mobile do header usa `md:` (768px) do Tailwind (≈ os ~720px do protótipo).
+- Styleguide gated por `SHOW_STYLEGUIDE` (default = DEBUG) — não vaza em produção.
+- Correção de fundação capturada: `STATICFILES_DIRS` apontava para `BASE_DIR/static`
+  (inexistente); ajustado para `BASE_DIR/justavalia/static`.
 
 ## Registro de decisões (Fase 0)
 
